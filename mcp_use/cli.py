@@ -458,7 +458,8 @@ Usage: mcp-use catalog <subcommand> [options]
 Subcommands:
   categories                      List all available categories
   list [--category <cat>]         List servers, optionally filtered
-  search <query>                  Search by name, description, or tag
+  search <query> [--generate] [--output FILE] [--token TOKEN]
+                                  Search by name, description, or tag
   info <slug>                     Show full details for a server
   save <slug>... [options]        Write an mcp-use config JSON file
 
@@ -467,9 +468,18 @@ Save options:
   --token TOKEN   Apify API token (default: $APIFY_API_TOKEN)
   --combined      Pack all actors into a single MCP connection
 
+Search options:
+  --generate, -g  After printing results, also output a ready-to-use JSON config
+  --output FILE, -o FILE
+                  Write the JSON config to this file path (with --generate)
+  --token TOKEN, -t TOKEN
+                  Apify API token for the generated URL (default: $APIFY_API_TOKEN)
+
 Examples:
   mcp-use catalog categories
   mcp-use catalog search weather
+  mcp-use catalog search weather --generate
+  mcp-use catalog search weather --generate --output weather.json
   mcp-use catalog list --category research
   mcp-use catalog info firecrawl-mcp-server
   mcp-use catalog save tavily-mcp-server wikipedia-mcp-server --output my.json
@@ -521,8 +531,13 @@ def handle_catalog(args: list[str]) -> None:
 
     # ---- search ----
     elif parsed.subcommand == "search":
+        import json as _json
+
         sub = _ap.ArgumentParser(prog="mcp-use catalog search", add_help=False)
         sub.add_argument("query")
+        sub.add_argument("--generate", "-g", action="store_true")
+        sub.add_argument("--output", "-o", default=None)
+        sub.add_argument("--token", "-t", default="${APIFY_API_TOKEN}")
         opts = sub.parse_args(remaining)
 
         results = catalog.search(opts.query)
@@ -535,6 +550,24 @@ def handle_catalog(args: list[str]) -> None:
             desc_short = desc[:68] + "…" if len(desc) > 68 else desc
             print(f"    {desc_short}")
         print()
+
+        if opts.generate:
+            if not results:
+                print("  No results to generate config for.\n")
+            else:
+                slugs = [s["slug"] for s in results]
+                config = catalog.generate_config(slugs, apify_token=opts.token)
+                if opts.output:
+                    spinner = Spinner(f"Writing config for {len(slugs)} server(s)")
+                    spinner.start()
+                    try:
+                        with open(opts.output, "w") as _f:
+                            _json.dump(config, _f, indent=2)
+                    finally:
+                        spinner.stop(f"Config saved → {opts.output}")
+                else:
+                    print(_json.dumps(config, indent=2))
+                    print()
 
     # ---- info ----
     elif parsed.subcommand == "info":
@@ -607,7 +640,7 @@ Available Commands:
   create     🚀 Create a new MCP project (server, agent, or both)
              Interactive wizard to scaffold your MCP project
 
-  catalog    📦 Browse and connect to 131 MCP servers from the API mega-list
+  catalog    📦 Browse and connect to 189 MCP servers from the API mega-list
              Search, filter by category, and generate ready-to-use configs
 
   deploy     ☁️  Deploy your MCP project to the cloud
