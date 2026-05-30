@@ -458,7 +458,7 @@ Usage: mcp-use catalog <subcommand> [options]
 Subcommands:
   categories                      List all available categories
   list [--category <cat>]         List servers, optionally filtered
-  search <query> [--generate] [--output FILE] [--token TOKEN]
+  search <query> [--category <cat>] [--generate] [--output FILE] [--token TOKEN]
                                   Search by name, description, or tag
   info <slug>                     Show full details for a server
   save <slug>... [options]        Write an mcp-use config JSON file
@@ -469,6 +469,7 @@ Save options:
   --combined      Pack all actors into a single MCP connection
 
 Search options:
+  --category, -c  Filter search results to a specific category
   --generate, -g  After printing results, also output a ready-to-use JSON config
   --output FILE, -o FILE
                   Write the JSON config to this file path (with --generate)
@@ -478,6 +479,7 @@ Search options:
 Examples:
   mcp-use catalog categories
   mcp-use catalog search weather
+  mcp-use catalog search weather --category travel
   mcp-use catalog search weather --generate
   mcp-use catalog search weather --generate --output weather.json
   mcp-use catalog list --category research
@@ -535,13 +537,19 @@ def handle_catalog(args: list[str]) -> None:
 
         sub = _ap.ArgumentParser(prog="mcp-use catalog search", add_help=False)
         sub.add_argument("query")
+        sub.add_argument("--category", "-c", default=None)
         sub.add_argument("--generate", "-g", action="store_true")
         sub.add_argument("--output", "-o", default=None)
         sub.add_argument("--token", "-t", default="${APIFY_API_TOKEN}")
         opts = sub.parse_args(remaining)
 
         results = catalog.search(opts.query)
-        print(f'\n  Search: "{opts.query}" — {len(results)} result(s)\n  {_DIVIDER}')
+        if opts.category:
+            results = [s for s in results if s["category"] == opts.category]
+        header = f'"{opts.query}"'
+        if opts.category:
+            header += f" in [{opts.category}]"
+        print(f'\n  Search: {header} — {len(results)} result(s)\n  {_DIVIDER}')
         if not results:
             print("  No servers found. Try a broader term.")
         for s in results:
