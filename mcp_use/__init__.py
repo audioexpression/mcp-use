@@ -14,6 +14,7 @@ from .logging import MCP_USE_DEBUG, Logger, logger  # isort: skip
 # Now import other modules - observability must come after logging
 from . import observability  # noqa: E402
 from .agents.mcpagent import MCPAgent
+from .catalog import MCPServerCatalog
 from .client import MCPClient
 from .config import load_config_file
 from .connectors import BaseConnector, HttpConnector, StdioConnector, WebSocketConnector
@@ -23,6 +24,7 @@ __version__ = version("mcp-use")
 
 __all__ = [
     "MCPAgent",
+    "MCPServerCatalog",
     "MCPClient",
     "MCPSession",
     "BaseConnector",

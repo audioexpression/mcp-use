@@ -1,0 +1,1050 @@
+[
+  {
+    "name": "YouTube Playlist Extractor",
+    "slug": "youtube-playlist-extractor",
+    "description": "Extract complete playlist information with all video details from any YouTube playlist",
+    "apify_actor": "dz_omar/youtube-playlist-extractor",
+    "category": "social_media",
+    "tags": ["youtube", "video", "playlist"]
+  },
+  {
+    "name": "4K Video Downloader",
+    "slug": "4k-video-downloader",
+    "description": "Download high-quality videos from multiple platforms",
+    "apify_actor": "nextapi/4k-video-downloader",
+    "category": "media",
+    "tags": ["video", "download", "4k"]
+  },
+  {
+    "name": "TikTok Live Recorder",
+    "slug": "tiktok-live-recorder",
+    "description": "Record TikTok Live streams automatically",
+    "apify_actor": "nextapi/tiktok-live-recorder",
+    "category": "social_media",
+    "tags": ["tiktok", "live", "video"]
+  },
+  {
+    "name": "TikTok Video Downloader",
+    "slug": "tiktok-video-downloader",
+    "description": "Enables watermark-free video downloads with bulk saving of trending content for offline access",
+    "apify_actor": "nextapi/tiktok-video-downloader",
+    "category": "social_media",
+    "tags": ["tiktok", "video", "download"]
+  },
+  {
+    "name": "Telegram Scraper",
+    "slug": "telegram-scraper",
+    "description": "Instantly extract thousands of Telegram members from any group",
+    "apify_actor": "nextapi/telegram-scraper",
+    "category": "social_media",
+    "tags": ["telegram", "scraping", "members"]
+  },
+  {
+    "name": "YouTube Comments Scraper",
+    "slug": "youtube-comments-scraper",
+    "description": "Extract YouTube comments with author info, likes, timestamps, and nested replies",
+    "apify_actor": "dz_omar/youtube-comments-scraper",
+    "category": "social_media",
+    "tags": ["youtube", "comments", "scraping"]
+  },
+  {
+    "name": "Telegram Message Scraper",
+    "slug": "telegram-message",
+    "description": "Scrape and archive Telegram messages from public channels and groups",
+    "apify_actor": "nextapi/telegram-message",
+    "category": "social_media",
+    "tags": ["telegram", "messages", "scraping"]
+  },
+  {
+    "name": "Telegram Profile Scraper",
+    "slug": "telegram-profile",
+    "description": "Gathers public user and channel profile data for lead generation",
+    "apify_actor": "nextapi/telegram-profile",
+    "category": "social_media",
+    "tags": ["telegram", "profile", "lead-generation"]
+  },
+  {
+    "name": "Video to Text",
+    "slug": "video-to-text",
+    "description": "Convert video content into accurate text transcripts",
+    "apify_actor": "nextapi/video-to-text",
+    "category": "media",
+    "tags": ["video", "transcription", "text"]
+  },
+  {
+    "name": "YouTube Video Downloader",
+    "slug": "youtube-video-downloader",
+    "description": "Supports 4K/HD downloads with metadata and subtitle extraction",
+    "apify_actor": "nextapi/youtube-video-downloader",
+    "category": "media",
+    "tags": ["youtube", "video", "download"]
+  },
+  {
+    "name": "Glassdoor Job Data Scraper",
+    "slug": "glassdoor-job-data-scraper",
+    "description": "Scrape Glassdoor jobs with salary ranges, company ratings and reviews",
+    "apify_actor": "nextapi/glassdoor-job-data-scraper",
+    "category": "jobs",
+    "tags": ["glassdoor", "jobs", "salary"]
+  },
+  {
+    "name": "Indeed Job Data Scraper",
+    "slug": "indeed-job-data-scraper",
+    "description": "Automate your job search data collection with the Indeed Jobs Scraper",
+    "apify_actor": "nextapi/indeed-job-data-scraper",
+    "category": "jobs",
+    "tags": ["indeed", "jobs", "scraping"]
+  },
+  {
+    "name": "LinkedIn Job Data Scraper",
+    "slug": "linkedin-job-data-scraper",
+    "description": "Extract LinkedIn job listings with salaries, skills, and company data",
+    "apify_actor": "nextapi/linkedin-job-data-scraper",
+    "category": "jobs",
+    "tags": ["linkedin", "jobs", "scraping"]
+  },
+  {
+    "name": "Reddit User Analyzer",
+    "slug": "reddit-user-analyzer",
+    "description": "Get detailed profiles of Reddit users including activity and interests",
+    "apify_actor": "nextapi/reddit-user-analyzer",
+    "category": "social_media",
+    "tags": ["reddit", "user", "analytics"]
+  },
+  {
+    "name": "Social Media Marketing",
+    "slug": "social-media-marketing",
+    "description": "Optimizes social media strategy through data automation",
+    "apify_actor": "nextapi/social-media-marketing",
+    "category": "social_media",
+    "tags": ["social-media", "marketing", "automation"]
+  },
+  {
+    "name": "Reddit Community Analyzer",
+    "slug": "reddit-community-analyzer",
+    "description": "Gain insights into subreddit engagement, user sentiment, and trending topics",
+    "apify_actor": "nextapi/reddit-community-analyzer",
+    "category": "social_media",
+    "tags": ["reddit", "community", "analytics"]
+  },
+  {
+    "name": "YouTube Transcript & Metadata Extractor",
+    "slug": "youtube-transcript-metadata-extractor",
+    "description": "Extract complete transcripts with precise timestamps and comprehensive video metadata",
+    "apify_actor": "dz_omar/youtube-transcript-metadata-extractor",
+    "category": "media",
+    "tags": ["youtube", "transcript", "metadata"]
+  },
+  {
+    "name": "AI Lead Extractor",
+    "slug": "ai-lead-extractor",
+    "description": "Extract any information from websites using intelligent AI",
+    "apify_actor": "dz_omar/ai-lead-extractor",
+    "category": "ai",
+    "tags": ["ai", "lead-generation", "scraping"]
+  },
+  {
+    "name": "Amazon Product Scraper",
+    "slug": "amazon-product-scraper",
+    "description": "Enterprise-grade tool extracting real-time ASINs, pricing, reviews, and specs",
+    "apify_actor": "datascoutapi/amazon-product-scraper",
+    "category": "ecommerce",
+    "tags": ["amazon", "ecommerce", "product"]
+  },
+  {
+    "name": "AntVis Chart MCP Server",
+    "slug": "antvis-chart-mcp-server",
+    "description": "MCP server for generating charts using AntV",
+    "apify_actor": "agentify/antvis-chart-mcp-server",
+    "category": "developer_tools",
+    "tags": ["charts", "visualization", "antv"]
+  },
+  {
+    "name": "Apartments.com Scraper",
+    "slug": "apartments-com-scraper",
+    "description": "Scrape millions of active U.S. and Canada rental listings",
+    "apify_actor": "datascoutapi/apartments-com-scraper",
+    "category": "real_estate",
+    "tags": ["real-estate", "apartments", "rental"]
+  },
+  {
+    "name": "API Doc MCP",
+    "slug": "api-doc-mcp",
+    "description": "MCP server that scrapes any documentation website",
+    "apify_actor": "wuyuwen0/api-doc-mcp",
+    "category": "developer_tools",
+    "tags": ["documentation", "scraping", "api"]
+  },
+  {
+    "name": "ArXiv MCP Server",
+    "slug": "arxiv-mcp-server",
+    "description": "Provides a bridge between AI assistants and arXiv's research repository",
+    "apify_actor": "jakub.kopecky/arxiv-mcp-server",
+    "category": "research",
+    "tags": ["arxiv", "research", "papers"]
+  },
+  {
+    "name": "BIStoreEngine",
+    "slug": "bistoreengine",
+    "description": "A Business Intelligence MCP-ready scraping engine",
+    "apify_actor": "professional_jostle/bistoreengine",
+    "category": "data_scraping",
+    "tags": ["business-intelligence", "scraping", "data"]
+  },
+  {
+    "name": "Brave Search MCP Server",
+    "slug": "brave-search-mcp-server",
+    "description": "Powers query processing for Brave Search with organic results and AI answers",
+    "apify_actor": "agentify/brave-search-mcp-server",
+    "category": "search",
+    "tags": ["brave", "search", "web"]
+  },
+  {
+    "name": "Browserbase MCP Server",
+    "slug": "browserbase-mcp-server",
+    "description": "Model Context Protocol server that provides browser automation capabilities via Browserbase",
+    "apify_actor": "agentify/browserbase-mcp-server",
+    "category": "developer_tools",
+    "tags": ["browser", "automation", "browserbase"]
+  },
+  {
+    "name": "Brute Force Actor",
+    "slug": "brute-froce-actor",
+    "description": "General-purpose brute force testing actor",
+    "apify_actor": "wheat_jiminy/brute-froce-actor",
+    "category": "security",
+    "tags": ["security", "testing", "brute-force"]
+  },
+  {
+    "name": "Calculator MCP Server",
+    "slug": "calculator-mcp-server",
+    "description": "A Model Context Protocol server for mathematical calculations",
+    "apify_actor": "agentify/calculator-mcp-server",
+    "category": "developer_tools",
+    "tags": ["calculator", "math", "utility"]
+  },
+  {
+    "name": "Check Available Domain Names",
+    "slug": "check-available-domain-names",
+    "description": "Verifies domain names availability and expiration dates",
+    "apify_actor": "exporter24/check-available-domain-names",
+    "category": "domain",
+    "tags": ["domain", "availability", "whois"]
+  },
+  {
+    "name": "Check X Account DM Status",
+    "slug": "check-x-account-dm-status",
+    "description": "Automatically checks whether a Twitter/X user has open Direct Messages",
+    "apify_actor": "fastcrawler/check-x-account-dm-status-direct-message",
+    "category": "social_media",
+    "tags": ["twitter", "x", "dm"]
+  },
+  {
+    "name": "CVE Search MCP Server",
+    "slug": "cve-search",
+    "description": "Model Context Protocol server for searching and retrieving CVE vulnerability information",
+    "apify_actor": "vulnv/cve-search",
+    "category": "security",
+    "tags": ["security", "cve", "vulnerability"]
+  },
+  {
+    "name": "DeepL MCP Server",
+    "slug": "deepl-mcp-server",
+    "description": "A Model Context Protocol server that provides translation capabilities using the DeepL API",
+    "apify_actor": "agentify/deepl-mcp-server",
+    "category": "ai",
+    "tags": ["translation", "deepl", "language"]
+  },
+  {
+    "name": "DevTrends MCP",
+    "slug": "devtrends-mcp",
+    "description": "Real-time developer intelligence for AI coding assistants",
+    "apify_actor": "peghin/devtrends-mcp",
+    "category": "developer_tools",
+    "tags": ["developer", "trends", "intelligence"]
+  },
+  {
+    "name": "Dictionary MCP Server",
+    "slug": "dictionary-mcp-server",
+    "description": "Dictionary and thesaurus MCP server proxy",
+    "apify_actor": "agentify/dictionary-mcp-server",
+    "category": "developer_tools",
+    "tags": ["dictionary", "thesaurus", "language"]
+  },
+  {
+    "name": "Discord MCP Server",
+    "slug": "discord-mcp-server",
+    "description": "Discord integration tool for AI-based automation",
+    "apify_actor": "bhansalisoft/discord-mcp-server",
+    "category": "productivity",
+    "tags": ["discord", "messaging", "automation"]
+  },
+  {
+    "name": "Doc to Markdown MCP Server",
+    "slug": "doc-to-markdown-mcp",
+    "description": "An MCP server that converts documents to clean Markdown",
+    "apify_actor": "abotapi/doc-to-markdown-mcp",
+    "category": "developer_tools",
+    "tags": ["documents", "markdown", "conversion"]
+  },
+  {
+    "name": "Docfork MCP Server",
+    "slug": "docfork-mcp-server",
+    "description": "Access latest documentation and code examples from 9000+ libraries",
+    "apify_actor": "agentify/docfork-mcp-server",
+    "category": "developer_tools",
+    "tags": ["documentation", "libraries", "code"]
+  },
+  {
+    "name": "Domain Availability WHOIS DNS",
+    "slug": "domaindaddy",
+    "description": "Checks domain availability and expiry dates, retrieves WHOIS and RDAP data, DNS, IP, ASN",
+    "apify_actor": "datascoutapi/domaindaddy",
+    "category": "domain",
+    "tags": ["domain", "whois", "dns"]
+  },
+  {
+    "name": "Download All Tweets by User",
+    "slug": "download-all-tweets-by-user",
+    "description": "Download all tweets and replies posted by a specific Twitter/X user",
+    "apify_actor": "fastcrawler/download-all-tweets-and-replies-by-a-specific-twitter-x-user",
+    "category": "social_media",
+    "tags": ["twitter", "x", "tweets"]
+  },
+  {
+    "name": "Elite Social Media Lite",
+    "slug": "elite-social-media-lite",
+    "description": "Automate social media content generation and analysis",
+    "apify_actor": "thepattyroller/elite-social-media-lite",
+    "category": "social_media",
+    "tags": ["social-media", "automation", "content"]
+  },
+  {
+    "name": "Email Verifier",
+    "slug": "email-verifier",
+    "description": "#1 Email Verification Service for validating email addresses",
+    "apify_actor": "account56/email-verifier",
+    "category": "domain",
+    "tags": ["email", "verification", "validation"]
+  },
+  {
+    "name": "Exa MCP Server",
+    "slug": "exa-mcp-server",
+    "description": "HTTP MCP proxy to Exa's hosted MCP server for neural search",
+    "apify_actor": "agentify/exa-mcp-server",
+    "category": "search",
+    "tags": ["exa", "search", "neural"]
+  },
+  {
+    "name": "Excel MCP Server",
+    "slug": "excel-mcp-server",
+    "description": "MCP server for reading and writing Excel files",
+    "apify_actor": "lovely_radiologist/excel-mcp-server",
+    "category": "productivity",
+    "tags": ["excel", "spreadsheet", "files"]
+  },
+  {
+    "name": "Explorium MCP Server",
+    "slug": "explorium-mcp-server",
+    "description": "Unlock the power of the Explorium Business Data Hub via MCP",
+    "apify_actor": "agentify/explorium-mcp-server",
+    "category": "data_scraping",
+    "tags": ["business-data", "explorium", "enrichment"]
+  },
+  {
+    "name": "Fast Instagram Profile Scraper",
+    "slug": "instagram-profile-scraper-v2",
+    "description": "Fetches public profile info for multiple Instagram accounts",
+    "apify_actor": "iskander/instagram-profile-scraper-v2",
+    "category": "social_media",
+    "tags": ["instagram", "profile", "scraping"]
+  },
+  {
+    "name": "Fast Website Content Crawler",
+    "slug": "fast-website-content-crawler",
+    "description": "A high-performance web scraper that rapidly extracts and analyzes content from websites",
+    "apify_actor": "6sigmag/fast-website-content-crawler",
+    "category": "data_scraping",
+    "tags": ["web", "crawler", "content"]
+  },
+  {
+    "name": "FetchSERP MCP Server",
+    "slug": "fetchserp-mcp-server",
+    "description": "A Model Context Protocol server that exposes the FetchSERP API for SEO and SERP data",
+    "apify_actor": "agentify/fetchserp-mcp-server",
+    "category": "search",
+    "tags": ["seo", "serp", "search"]
+  },
+  {
+    "name": "Figma MCP Server",
+    "slug": "figma-mcp-server",
+    "description": "Figma integration tool for AI — read designs, components, and assets",
+    "apify_actor": "bhansalisoft/figma-mcp-server",
+    "category": "developer_tools",
+    "tags": ["figma", "design", "ui"]
+  },
+  {
+    "name": "Financial Datasets MCP Server",
+    "slug": "financial-datasets-mcp-server",
+    "description": "Provides access to stock market data and financial datasets",
+    "apify_actor": "agentify/financial-datasets-mcp-server",
+    "category": "finance",
+    "tags": ["finance", "stocks", "market-data"]
+  },
+  {
+    "name": "Firecrawl MCP Server",
+    "slug": "firecrawl-mcp-server",
+    "description": "A Model Context Protocol server that integrates with Firecrawl for powerful web scraping",
+    "apify_actor": "agentify/firecrawl-mcp-server",
+    "category": "data_scraping",
+    "tags": ["firecrawl", "scraping", "web"]
+  },
+  {
+    "name": "Flightradar24 MCP Server",
+    "slug": "flightradar24-mcp-server",
+    "description": "MCP server for real-time flight tracking via Flightradar24",
+    "apify_actor": "agentify/flightradar24-mcp-server",
+    "category": "travel",
+    "tags": ["flights", "travel", "tracking"]
+  },
+  {
+    "name": "Fuel Prices ANZ MCP Server",
+    "slug": "fuel-prices-anz-mcp-server",
+    "description": "Provides real-time fuel price search capabilities for Australia and New Zealand",
+    "apify_actor": "abotapi/fuel-prices-anz-mcp-server",
+    "category": "travel",
+    "tags": ["fuel", "prices", "australia"]
+  },
+  {
+    "name": "GA4 MCP",
+    "slug": "ga4-mcp-worker",
+    "description": "A powerful Google Analytics 4 Model Context Protocol actor",
+    "apify_actor": "smacient/ga4-mcp-worker",
+    "category": "finance",
+    "tags": ["google-analytics", "analytics", "ga4"]
+  },
+  {
+    "name": "Gemini AI MCP Server",
+    "slug": "gemini-ai-mcp-server",
+    "description": "Integrates Gemini AI functionality into your AI agents",
+    "apify_actor": "bhansalisoft/gemini-ai-mcp-server",
+    "category": "ai",
+    "tags": ["gemini", "google", "ai"]
+  },
+  {
+    "name": "GitMCP Universal Repository Processor",
+    "slug": "gitmcp-universal-repository-processor",
+    "description": "Turn any public or private GitHub repository into a ready-to-use knowledge pack",
+    "apify_actor": "theguide/gitmcp-universal-repository-processor",
+    "category": "developer_tools",
+    "tags": ["github", "repository", "knowledge"]
+  },
+  {
+    "name": "Google Calendar Cancel Appointment",
+    "slug": "googlecalendar-cancel-appointment",
+    "description": "Pairs with the Apify Actors MCP server to give AI agents access to Google Calendar cancellations",
+    "apify_actor": "sambehnke/googlecalendar-cancel-appointment-tool",
+    "category": "productivity",
+    "tags": ["google-calendar", "calendar", "scheduling"]
+  },
+  {
+    "name": "Google Calendar Create Event",
+    "slug": "google-calendar-create-event",
+    "description": "AI agent using Google Calendar to create events with Apify MCP Server",
+    "apify_actor": "sambehnke/google-calendar-create-event",
+    "category": "productivity",
+    "tags": ["google-calendar", "calendar", "scheduling"]
+  },
+  {
+    "name": "Google Keyword Scraper",
+    "slug": "google-keyword-scraper",
+    "description": "Discover keyword ideas instantly by scraping Google autocomplete suggestions",
+    "apify_actor": "dxbear/google-keyword-scraper",
+    "category": "search",
+    "tags": ["google", "keywords", "seo"]
+  },
+  {
+    "name": "Google Keyword Planner MCP",
+    "slug": "google-keyword-planner-mcp",
+    "description": "A comprehensive Google Keyword Planner MCP Actor for SEO research",
+    "apify_actor": "smacient/google-keyword-planner-mcp",
+    "category": "search",
+    "tags": ["google", "keywords", "seo"]
+  },
+  {
+    "name": "Google Maps MCP",
+    "slug": "google-maps-mcp",
+    "description": "Unified Apify MCP server for Google Maps data — places, reviews, directions",
+    "apify_actor": "crawlerbros/google-maps-mcp",
+    "category": "travel",
+    "tags": ["google-maps", "places", "location"]
+  },
+  {
+    "name": "Google Search MCP Server",
+    "slug": "google-search-mcp-server",
+    "description": "Scrapes real-time Google SERPs including organic results, ads, PAA, and reviews",
+    "apify_actor": "datascoutapi/google-search-mcp-server",
+    "category": "search",
+    "tags": ["google", "search", "serp"]
+  },
+  {
+    "name": "Google Sheet MCP Server",
+    "slug": "google-sheet-mcp-server",
+    "description": "Google Sheets integration for AI — read, write, and manage spreadsheets",
+    "apify_actor": "bhansalisoft/google-sheet-mcp-server",
+    "category": "productivity",
+    "tags": ["google-sheets", "spreadsheet", "data"]
+  },
+  {
+    "name": "GPU Hunter",
+    "slug": "gpu-arbitrage-mcp",
+    "description": "Real-time GPU price discovery across RunPod, Lambda Labs, and Vast.ai",
+    "apify_actor": "superscrat/gpu-arbitrage-mcp",
+    "category": "finance",
+    "tags": ["gpu", "cloud", "pricing"]
+  },
+  {
+    "name": "GSC MCP",
+    "slug": "gsc-mcp-worker",
+    "description": "A comprehensive Google Search Console Model Context Protocol Actor",
+    "apify_actor": "smacient/gsc-mcp-worker",
+    "category": "finance",
+    "tags": ["google-search-console", "seo", "analytics"]
+  },
+  {
+    "name": "HiAnime Scraper",
+    "slug": "hianimez-to-scraper",
+    "description": "Scrapes anime data from HiAnime.to",
+    "apify_actor": "giovannibiancia/hianimez-to-scraper",
+    "category": "media",
+    "tags": ["anime", "scraping", "media"]
+  },
+  {
+    "name": "Home Assistant MCP Server",
+    "slug": "home-assistant-mcp-server",
+    "description": "Control your Home Assistant smart home devices through AI agents",
+    "apify_actor": "parseforge/home-assistant-mcp-server",
+    "category": "productivity",
+    "tags": ["home-assistant", "smart-home", "iot"]
+  },
+  {
+    "name": "HubSpot MCP Server",
+    "slug": "hubspot-apify-mcp-server",
+    "description": "The MCP server to interact with HubSpot CRM",
+    "apify_actor": "anchor/hubspot-apify-mcp-server",
+    "category": "productivity",
+    "tags": ["hubspot", "crm", "sales"]
+  },
+  {
+    "name": "Invoice Collector MCP",
+    "slug": "invoice-collector-mcp",
+    "description": "Automates invoice collection from Razorpay, PayPal, and Stripe",
+    "apify_actor": "devaditya/invoice-collector-mcp",
+    "category": "finance",
+    "tags": ["invoices", "payment", "automation"]
+  },
+  {
+    "name": "Job Search Engines",
+    "slug": "job-search-engines",
+    "description": "Stop juggling multiple job boards — search across all major job platforms at once",
+    "apify_actor": "nextapi/job-search-engines",
+    "category": "jobs",
+    "tags": ["jobs", "search", "career"]
+  },
+  {
+    "name": "Kiwi MCP Server",
+    "slug": "kiwi-mcp-server",
+    "description": "Kiwi.com flight search MCP server for finding cheap flights",
+    "apify_actor": "agentify/kiwi-mcp-server",
+    "category": "travel",
+    "tags": ["flights", "travel", "kiwi"]
+  },
+  {
+    "name": "Lara Translate MCP Server",
+    "slug": "lara-translate-mcp-server",
+    "description": "Handles translation requests via the Lara Translate API",
+    "apify_actor": "agentify/lara-translate-mcp-server",
+    "category": "ai",
+    "tags": ["translation", "language", "lara"]
+  },
+  {
+    "name": "Markdown to PDF MCP Server",
+    "slug": "markdown-to-pdf-mcp",
+    "description": "Convert Markdown content to PDF format",
+    "apify_actor": "parseforge/markdown-to-pdf-mcp",
+    "category": "developer_tools",
+    "tags": ["markdown", "pdf", "conversion"]
+  },
+  {
+    "name": "Markdownify MCP Server",
+    "slug": "markdownify-mcp-server",
+    "description": "Convert any webpage to clean, formatted Markdown",
+    "apify_actor": "crawlerbros/markdownify-mcp-server",
+    "category": "developer_tools",
+    "tags": ["markdown", "web", "conversion"]
+  },
+  {
+    "name": "Markitdown MCP Server",
+    "slug": "markitdown-mcp-server",
+    "description": "Cloud-hosted MCP server converting 29+ document formats to AI-ready Markdown",
+    "apify_actor": "rector_labs/markitdown-mcp-server",
+    "category": "developer_tools",
+    "tags": ["markdown", "documents", "conversion"]
+  },
+  {
+    "name": "MCP Deep Web Search",
+    "slug": "actor-deep-web-search-mcp",
+    "description": "MCP Deep Search Server is a cloud-based tool for advanced research and deep web search",
+    "apify_actor": "vojtech.kaiser/actor-deep-web-search-mcp",
+    "category": "search",
+    "tags": ["deep-web", "search", "research"]
+  },
+  {
+    "name": "MCP Dev Summit Agenda Server",
+    "slug": "mcp-dev-summit-agenda-server",
+    "description": "Fetch the MCP Dev Summit agenda in London through MCP server",
+    "apify_actor": "jakub.kopecky/mcp-dev-summit-agenda-server",
+    "category": "miscellaneous",
+    "tags": ["events", "agenda", "mcp"]
+  },
+  {
+    "name": "MCP Documentation Hunter",
+    "slug": "merlyn-docs-hunter",
+    "description": "Enhance your coding assistants with up to date documentation",
+    "apify_actor": "bmerlyns/merlyn-docs-hunter",
+    "category": "developer_tools",
+    "tags": ["documentation", "coding", "search"]
+  },
+  {
+    "name": "MCP Reddit",
+    "slug": "mcp-reddit",
+    "description": "Connects Reddit API with Model Context Protocol for AI-powered Reddit interactions",
+    "apify_actor": "barudob/mcp-reddit",
+    "category": "social_media",
+    "tags": ["reddit", "social-media", "api"]
+  },
+  {
+    "name": "MCP Research Server",
+    "slug": "mcp-research-server",
+    "description": "AI-powered research assistant with web search and academic search capabilities",
+    "apify_actor": "fiery_dream/mcp-research-server",
+    "category": "research",
+    "tags": ["research", "ai", "search"]
+  },
+  {
+    "name": "MCP Server Generator",
+    "slug": "mcp-server-generator",
+    "description": "Generate MCP server configurations from OpenAPI or other specifications",
+    "apify_actor": "fiery_dream/mcp-server-generator",
+    "category": "developer_tools",
+    "tags": ["mcp", "generator", "development"]
+  },
+  {
+    "name": "MCP Stress Tester",
+    "slug": "mcp-stress-tester",
+    "description": "A simple MCP Stress Tester client Actor for load testing MCP servers",
+    "apify_actor": "jakub.kopecky/mcp-stress-tester",
+    "category": "developer_tools",
+    "tags": ["testing", "stress-test", "mcp"]
+  },
+  {
+    "name": "MCP Validator",
+    "slug": "mcp-validator",
+    "description": "MCP Validator is a professional validation and compliance testing tool for MCP servers",
+    "apify_actor": "rocketagro/mcp-validator",
+    "category": "developer_tools",
+    "tags": ["validation", "testing", "mcp"]
+  },
+  {
+    "name": "Microsoft Learn MCP Server",
+    "slug": "microsoft-learn-mcp-server",
+    "description": "Enables AI clients to access trusted information from Microsoft Learn documentation",
+    "apify_actor": "agentify/microsoft-learn-mcp-server",
+    "category": "developer_tools",
+    "tags": ["microsoft", "documentation", "learning"]
+  },
+  {
+    "name": "Mindmap MCP Server",
+    "slug": "mindmap-mcp-server",
+    "description": "A Model Context Protocol server for converting Markdown content to interactive mindmaps",
+    "apify_actor": "agentify/mindmap-mcp-server",
+    "category": "developer_tools",
+    "tags": ["mindmap", "visualization", "markdown"]
+  },
+  {
+    "name": "Multi Agent Architect MCP",
+    "slug": "multi-agent-architect-mcp",
+    "description": "MCP server providing expert knowledge on multi-agent architectures",
+    "apify_actor": "ai_crew_solutions/multi-agent-architect-mcp",
+    "category": "ai",
+    "tags": ["multi-agent", "architecture", "ai"]
+  },
+  {
+    "name": "n8n Documentation MCP Server",
+    "slug": "n8n-mcp-server",
+    "description": "Provides AI assistants with structured access to n8n node documentation",
+    "apify_actor": "agentify/n8n-mcp-server",
+    "category": "developer_tools",
+    "tags": ["n8n", "automation", "documentation"]
+  },
+  {
+    "name": "National Parks MCP Server",
+    "slug": "national-parks-mcp-server",
+    "description": "MCP Server for the National Park Service API — parks, alerts, and activities",
+    "apify_actor": "agentify/national-parks-mcp-server",
+    "category": "miscellaneous",
+    "tags": ["national-parks", "travel", "api"]
+  },
+  {
+    "name": "Natural Language Dataset Query",
+    "slug": "natural-language-dataset-query",
+    "description": "Use natural language queries to retrieve results from an Apify dataset",
+    "apify_actor": "apify/natural-language-dataset-query",
+    "category": "developer_tools",
+    "tags": ["nlp", "dataset", "query"]
+  },
+  {
+    "name": "NFL Data Collector",
+    "slug": "nfl-data-collector",
+    "description": "NFL Data Collector system with complete integration for Apify Actor and MCP server",
+    "apify_actor": "syntellect_ai/nfl-data-collector",
+    "category": "miscellaneous",
+    "tags": ["nfl", "sports", "data"]
+  },
+  {
+    "name": "Nova Integrations MCP Server",
+    "slug": "nova-integrations-mcp-server",
+    "description": "Transform AI agents with tools that enhance real-world functionality",
+    "apify_actor": "sambehnke/nova-integrations-mcp-server",
+    "category": "productivity",
+    "tags": ["integrations", "automation", "tools"]
+  },
+  {
+    "name": "Olostep MCP Server",
+    "slug": "olostep-mcp-server",
+    "description": "Olostep offers clean markdown content from websites for AI consumption",
+    "apify_actor": "agentify/olostep-mcp-server",
+    "category": "data_scraping",
+    "tags": ["web", "scraping", "markdown"]
+  },
+  {
+    "name": "OP.GG MCP Server",
+    "slug": "op-gg-mcp-server",
+    "description": "OP.GG Model Context Protocol server providing access to League of Legends data",
+    "apify_actor": "agentify/op-gg-mcp-server",
+    "category": "miscellaneous",
+    "tags": ["gaming", "league-of-legends", "esports"]
+  },
+  {
+    "name": "Open Meteo MCP Server",
+    "slug": "open-meteo-mcp-server",
+    "description": "Apify Actor providing the Open-Meteo Model Context Protocol server for weather data",
+    "apify_actor": "agentify/open-meteo-mcp-server",
+    "category": "travel",
+    "tags": ["weather", "meteo", "forecast"]
+  },
+  {
+    "name": "OpenAI Agent MCP Tester",
+    "slug": "openai-agent-mcp-tester",
+    "description": "Automated Model Context Protocol server testing and evaluation tool using OpenAI agents",
+    "apify_actor": "jiri.spilka/openai-agent-mcp-tester",
+    "category": "developer_tools",
+    "tags": ["testing", "openai", "mcp"]
+  },
+  {
+    "name": "OpenAPI to MCP Converter",
+    "slug": "openapi-to-mcp-converter",
+    "description": "Convert any OpenAPI specification into a Model Context Protocol server",
+    "apify_actor": "theguide/openapi-to-mcp-converter",
+    "category": "developer_tools",
+    "tags": ["openapi", "mcp", "converter"]
+  },
+  {
+    "name": "OpenFDA AI Wrapper",
+    "slug": "openfda-ai-wrapper",
+    "description": "LLM-powered wrapper for the OpenFDA API — drug, food, and device safety data",
+    "apify_actor": "dc-codes426/openfda-ai-wrapper",
+    "category": "research",
+    "tags": ["fda", "medical", "safety"]
+  },
+  {
+    "name": "PDF AI Extractor MCP",
+    "slug": "pdf-ai-extractor-mcp",
+    "description": "Extracts text, tables, summaries, and structured data from any PDF",
+    "apify_actor": "devaditya/pdf-ai-extractor-mcp",
+    "category": "developer_tools",
+    "tags": ["pdf", "extraction", "ai"]
+  },
+  {
+    "name": "Perplexity Sonar MCP Server",
+    "slug": "perplexity-sonar-mcp-server",
+    "description": "Enables AI applications to perform real-time web searches via Perplexity Sonar API",
+    "apify_actor": "agentify/perplexity-sonar-mcp-server",
+    "category": "search",
+    "tags": ["perplexity", "search", "ai"]
+  },
+  {
+    "name": "Playlistfy",
+    "slug": "playlistfy",
+    "description": "An AI-powered playlist curator for your moods",
+    "apify_actor": "viverun/playlistfy",
+    "category": "media",
+    "tags": ["music", "playlist", "ai"]
+  },
+  {
+    "name": "Playwright MCP Server",
+    "slug": "playwright-mcp-server",
+    "description": "A Model Context Protocol server that provides browser automation capabilities via Playwright",
+    "apify_actor": "jiri.spilka/playwright-mcp-server",
+    "category": "developer_tools",
+    "tags": ["playwright", "browser", "automation"]
+  },
+  {
+    "name": "PubMed MCP Server",
+    "slug": "pubmed-mcp-server",
+    "description": "A server implementing the Model Context Protocol for accessing PubMed research articles",
+    "apify_actor": "agentify/pubmed-mcp-server",
+    "category": "research",
+    "tags": ["pubmed", "medical", "research"]
+  },
+  {
+    "name": "Puppeteer MCP",
+    "slug": "puppeteer-mcp",
+    "description": "AI-powered browser automation via Model Context Protocol using Puppeteer",
+    "apify_actor": "meysamazing/puppeteer-mcp",
+    "category": "developer_tools",
+    "tags": ["puppeteer", "browser", "automation"]
+  },
+  {
+    "name": "pure.md MCP Server",
+    "slug": "pure-md-mcp-server",
+    "description": "A Model Context Protocol server that provides web content extraction and search",
+    "apify_actor": "agentify/pure-md-mcp-server",
+    "category": "data_scraping",
+    "tags": ["web", "extraction", "markdown"]
+  },
+  {
+    "name": "PyPI MCP Server",
+    "slug": "pypi-mcp-server",
+    "description": "An Apify Actor that proxies the pypi-query-mcp-server for Python package info",
+    "apify_actor": "agentify/pypi-mcp-server",
+    "category": "developer_tools",
+    "tags": ["pypi", "python", "packages"]
+  },
+  {
+    "name": "RAG Browser",
+    "slug": "rag-browser",
+    "description": "Provides essential web browsing and content extraction functionality for RAG pipelines",
+    "apify_actor": "visita/rag-browser",
+    "category": "data_scraping",
+    "tags": ["rag", "browser", "extraction"]
+  },
+  {
+    "name": "Reddit MCP Scraper",
+    "slug": "reddit-mcp-scraper",
+    "description": "Unified Reddit scraper supporting 3 modes: posts, comments, and user data",
+    "apify_actor": "crawlerbros/reddit-mcp-scraper",
+    "category": "social_media",
+    "tags": ["reddit", "scraping", "posts"]
+  },
+  {
+    "name": "RSS News Scraper",
+    "slug": "rss-news-scraper",
+    "description": "Search required topics with relevant countries using RSS feeds",
+    "apify_actor": "aktech/rss-news-scraper",
+    "category": "media",
+    "tags": ["rss", "news", "scraping"]
+  },
+  {
+    "name": "Satsuma MCP Server",
+    "slug": "satsuma-mcp-server",
+    "description": "The Satsuma MCP Server powers food ordering and delivery workflows",
+    "apify_actor": "agentify/satsuma-mcp-server",
+    "category": "miscellaneous",
+    "tags": ["food", "delivery", "ordering"]
+  },
+  {
+    "name": "Slack MCP",
+    "slug": "slack-mcp",
+    "description": "Model Context Protocol server that lets AI copilots list channels and pull message history",
+    "apify_actor": "parseforge/slack-mcp",
+    "category": "productivity",
+    "tags": ["slack", "messaging", "channels"]
+  },
+  {
+    "name": "Slack MCP Server",
+    "slug": "slack-mcp-server",
+    "description": "Slack AI integration tool for sending messages, reading channels, and automation",
+    "apify_actor": "bhansalisoft/slack-mcp-server",
+    "category": "productivity",
+    "tags": ["slack", "messaging", "automation"]
+  },
+  {
+    "name": "SlideSpeak MCP Server",
+    "slug": "slidespeak-mcp-server",
+    "description": "Lets Claude or other MCP-compatible apps create PowerPoint presentations",
+    "apify_actor": "agentify/slidespeak-mcp-server",
+    "category": "productivity",
+    "tags": ["powerpoint", "presentations", "slides"]
+  },
+  {
+    "name": "Supabase MCP Self-Hosted",
+    "slug": "supabase-mcp-selfhosted",
+    "description": "Self-Hosted Supabase MCP Server with enhanced security",
+    "apify_actor": "coupaul/supabase-mcp-selfhosted",
+    "category": "developer_tools",
+    "tags": ["supabase", "database", "self-hosted"]
+  },
+  {
+    "name": "Tavily MCP Server",
+    "slug": "tavily-mcp-server",
+    "description": "Advanced web search and data extraction capabilities through the Tavily API",
+    "apify_actor": "agentify/tavily-mcp-server",
+    "category": "search",
+    "tags": ["tavily", "search", "ai"]
+  },
+  {
+    "name": "Tester MCP Client",
+    "slug": "tester-mcp-client",
+    "description": "A model context protocol client that connects to any MCP server for testing",
+    "apify_actor": "jiri.spilka/tester-mcp-client",
+    "category": "developer_tools",
+    "tags": ["testing", "mcp", "client"]
+  },
+  {
+    "name": "TextFormatter MCP Server",
+    "slug": "textformatter-mcp-server",
+    "description": "A Model Context Protocol server providing advanced text transformation capabilities",
+    "apify_actor": "agentify/textformatter-mcp-server",
+    "category": "developer_tools",
+    "tags": ["text", "formatting", "transformation"]
+  },
+  {
+    "name": "Time MCP Server",
+    "slug": "time-mcp-server",
+    "description": "An MCP server implementing the Model Context Protocol for time-related operations",
+    "apify_actor": "agentify/time-mcp-server",
+    "category": "developer_tools",
+    "tags": ["time", "timezone", "utility"]
+  },
+  {
+    "name": "TomTom MCP Server",
+    "slug": "tomtom-mcp-server",
+    "description": "An MCP server that simplifies geospatial development using TomTom APIs",
+    "apify_actor": "agentify/tomtom-mcp-server",
+    "category": "travel",
+    "tags": ["tomtom", "maps", "navigation"]
+  },
+  {
+    "name": "Twitter Account Locator",
+    "slug": "twitter-account-based-in-locator",
+    "description": "Fetch detailed About information for any Twitter/X user by screen name",
+    "apify_actor": "fastcrawler/twitter-account-based-in-locator-by-screen-name",
+    "category": "social_media",
+    "tags": ["twitter", "x", "profile"]
+  },
+  {
+    "name": "Twitter List Tweets Scraper",
+    "slug": "twitter-list-tweets-scraper",
+    "description": "Scrape tweets from any Twitter/X List easily",
+    "apify_actor": "yeahjjyy/twitter-list-tweets-scraper-0-3-1k-pay-per-result",
+    "category": "social_media",
+    "tags": ["twitter", "x", "tweets"]
+  },
+  {
+    "name": "Twitter X List Tweets Scraper",
+    "slug": "twitter-x-list-tweets-scraper",
+    "description": "Scrape tweets from any Twitter/X List with pay-per-result pricing",
+    "apify_actor": "fastcrawler/twitter-x-list-tweets-scraper-0-25-1k-pay-per-result",
+    "category": "social_media",
+    "tags": ["twitter", "x", "tweets"]
+  },
+  {
+    "name": "Weather MCP Server",
+    "slug": "weather-mcp-server",
+    "description": "A Model Context Protocol server that provides weather information and forecasts",
+    "apify_actor": "jiri.spilka/weather-mcp-server",
+    "category": "travel",
+    "tags": ["weather", "forecast", "climate"]
+  },
+  {
+    "name": "Web Search MCP Server",
+    "slug": "ai-search-mcp-server",
+    "description": "An Apify MCP Server that provides real-time web search capabilities",
+    "apify_actor": "abotapi/ai-search-mcp-server",
+    "category": "search",
+    "tags": ["web-search", "ai", "real-time"]
+  },
+  {
+    "name": "Website Content Crawler Pro",
+    "slug": "website-content-crawler-pro",
+    "description": "Crawl websites and extract clean, structured content at scale",
+    "apify_actor": "datascoutapi/website-content-crawler-pro",
+    "category": "data_scraping",
+    "tags": ["crawler", "web", "content"]
+  },
+  {
+    "name": "WhatsApp Cloud API MCP",
+    "slug": "whatsapp-cloud-api-mcp",
+    "description": "Give your AI agents a phone number to send and receive WhatsApp messages",
+    "apify_actor": "mdbm/whatsapp-cloud-api-mcp",
+    "category": "productivity",
+    "tags": ["whatsapp", "messaging", "api"]
+  },
+  {
+    "name": "WhatsApp SMS",
+    "slug": "whatsapp-sms",
+    "description": "Integrate your AI systems with WhatsApp Business API for messaging",
+    "apify_actor": "syntellect_ai/whatsapp-sms",
+    "category": "productivity",
+    "tags": ["whatsapp", "sms", "messaging"]
+  },
+  {
+    "name": "Wikipedia MCP Server",
+    "slug": "wikipedia-mcp-server",
+    "description": "MCP server for Wikipedia, providing LLMs and clients with real-time access to Wikipedia articles",
+    "apify_actor": "agentify/wikipedia-mcp-server",
+    "category": "research",
+    "tags": ["wikipedia", "knowledge", "reference"]
+  },
+  {
+    "name": "Winston AI MCP Server",
+    "slug": "winston-ai-mcp-server",
+    "description": "Run the Winston AI Model Context Protocol server for AI detection",
+    "apify_actor": "agentify/winston-ai-mcp-server",
+    "category": "ai",
+    "tags": ["ai-detection", "winston", "content"]
+  },
+  {
+    "name": "WordPress MCP Server",
+    "slug": "wordpress-mcp-server",
+    "description": "A lightweight MCP server for WordPress automation and content management",
+    "apify_actor": "extremescrapes/wordpress-mcp-server",
+    "category": "productivity",
+    "tags": ["wordpress", "cms", "automation"]
+  },
+  {
+    "name": "WordPress Universal Content Bridge",
+    "slug": "wordpress-universal-content-bridge",
+    "description": "The WordPress Universal Content Bridge solves the #1 problem in WordPress automation",
+    "apify_actor": "visita/wordpress-universal-content-bridge",
+    "category": "productivity",
+    "tags": ["wordpress", "content", "automation"]
+  },
+  {
+    "name": "YouTube Scraper",
+    "slug": "youtube-scraper",
+    "description": "Scrape YouTube videos by keyword search or channel",
+    "apify_actor": "starvibe/youtube-scraper",
+    "category": "social_media",
+    "tags": ["youtube", "video", "scraping"]
+  },
+  {
+    "name": "Zendesk MCP Server",
+    "slug": "zendesk-mcp-server-actor",
+    "description": "Facilitates seamless integration between AI agents and Zendesk customer support",
+    "apify_actor": "amaranth_nylon/zendesk-mcp-server-actor",
+    "category": "productivity",
+    "tags": ["zendesk", "support", "crm"]
+  }
+]
