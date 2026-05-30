@@ -64,19 +64,19 @@ def minimal_servers(tmp_path):
 
 class TestInitialization:
     def test_loads_all_servers(self, catalog):
-        assert len(catalog) == 131
+        assert len(catalog) == 189
 
     def test_repr_contains_counts(self, catalog):
         r = repr(catalog)
-        assert "131" in r
-        assert "16" in r  # 16 categories
+        assert "189" in r
+        assert "19" in r  # 19 categories
 
     def test_len(self, catalog):
-        assert len(catalog) == 131
+        assert len(catalog) == 189
 
     def test_slug_index_built(self, catalog):
-        # Internal index should have 131 entries
-        assert len(catalog._by_slug) == 131
+        # Internal index should have 189 entries
+        assert len(catalog._by_slug) == 189
 
     def test_all_slugs_unique(self, catalog):
         slugs = [s["slug"] for s in catalog._servers]
@@ -101,11 +101,11 @@ class TestCategories:
 
     def test_expected_categories_present(self, catalog):
         cats = catalog.categories()
-        for expected in ["ai", "search", "developer_tools", "social_media", "productivity"]:
+        for expected in ["ai", "search", "developer_tools", "social_media", "productivity", "news", "seo", "lead_generation"]:
             assert expected in cats, f"Expected category '{expected}' not found"
 
     def test_count(self, catalog):
-        assert len(catalog.categories()) == 16
+        assert len(catalog.categories()) == 19
 
     def test_no_duplicates(self, catalog):
         cats = catalog.categories()
@@ -122,7 +122,7 @@ class TestCategories:
 
 class TestListServers:
     def test_no_filter_returns_all(self, catalog):
-        assert len(catalog.list_servers()) == 131
+        assert len(catalog.list_servers()) == 189
 
     def test_category_filter(self, catalog):
         results = catalog.list_servers(category="search")
@@ -175,8 +175,8 @@ class TestSearch:
         assert catalog.search("xyzzy_no_match_9999") == []
 
     def test_empty_query_matches_all(self, catalog):
-        # Every server name/description contains "" so all 131 match
-        assert len(catalog.search("")) == 131
+        # Every server name/description contains "" so all 189 match
+        assert len(catalog.search("")) == 189
 
     def test_minimal_match_name(self, minimal_servers):
         results = minimal_servers.search("alpha")
