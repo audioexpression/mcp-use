@@ -446,6 +446,190 @@ def create_project(project_name: str, project_type: str) -> bool:
         return False
 
 
+# ============= CATALOG CLI FUNCTIONS =============
+
+_DIVIDER = "━" * 56
+
+
+def _print_catalog_help():
+    print("""
+Usage: mcp-use catalog <subcommand> [options]
+
+Subcommands:
+  categories                      List all available categories
+  list [--category <cat>]         List servers, optionally filtered
+  search <query> [--category <cat>] [--generate] [--output FILE] [--token TOKEN]
+                                  Search by name, description, or tag
+  info <slug>                     Show full details for a server
+  save <slug>... [options]        Write an mcp-use config JSON file
+
+Save options:
+  --output FILE   Output path  (default: mcp_servers.json)
+  --token TOKEN   Apify API token (default: $APIFY_API_TOKEN)
+  --combined      Pack all actors into a single MCP connection
+
+Search options:
+  --category, -c  Filter search results to a specific category
+  --generate, -g  After printing results, also output a ready-to-use JSON config
+  --output FILE, -o FILE
+                  Write the JSON config to this file path (with --generate)
+  --token TOKEN, -t TOKEN
+                  Apify API token for the generated URL (default: $APIFY_API_TOKEN)
+
+Examples:
+  mcp-use catalog categories
+  mcp-use catalog search weather
+  mcp-use catalog search weather --category travel
+  mcp-use catalog search weather --generate
+  mcp-use catalog search weather --generate --output weather.json
+  mcp-use catalog list --category research
+  mcp-use catalog info firecrawl-mcp-server
+  mcp-use catalog save tavily-mcp-server wikipedia-mcp-server --output my.json
+""")
+
+
+def handle_catalog(args: list[str]) -> None:
+    """Handle 'mcp-use catalog <subcommand>' commands."""
+    import argparse as _ap
+
+    from mcp_use.catalog import MCPServerCatalog
+
+    parser = _ap.ArgumentParser(prog="mcp-use catalog", add_help=False)
+    parser.add_argument("subcommand", nargs="?", choices=["categories", "list", "search", "info", "save"])
+    parser.add_argument("--help", "-h", action="store_true")
+
+    # sub-specific args parsed from remainder
+    parsed, remaining = parser.parse_known_args(args)
+
+    if parsed.help or not parsed.subcommand:
+        _print_catalog_help()
+        return
+
+    catalog = MCPServerCatalog()
+
+    # ---- categories ----
+    if parsed.subcommand == "categories":
+        print(f"\n  Categories ({len(catalog.categories())} total)\n  {_DIVIDER}")
+        for cat in catalog.categories():
+            count = len(catalog.list_servers(category=cat))
+            print(f"  {cat:<28} {count} servers")
+        print()
+
+    # ---- list ----
+    elif parsed.subcommand == "list":
+        sub = _ap.ArgumentParser(prog="mcp-use catalog list", add_help=False)
+        sub.add_argument("--category", "-c", default=None)
+        opts = sub.parse_args(remaining)
+
+        servers = catalog.list_servers(category=opts.category)
+        header = f"[{opts.category}]" if opts.category else "all categories"
+        print(f"\n  MCP Servers — {header} ({len(servers)} servers)\n  {_DIVIDER}")
+        for s in servers:
+            slug = s["slug"]
+            desc = s["description"]
+            desc_short = desc[:54] + "…" if len(desc) > 54 else desc
+            print(f"  {slug:<40} {desc_short}")
+        print()
+
+    # ---- search ----
+    elif parsed.subcommand == "search":
+        import json as _json
+
+        sub = _ap.ArgumentParser(prog="mcp-use catalog search", add_help=False)
+        sub.add_argument("query")
+        sub.add_argument("--category", "-c", default=None)
+        sub.add_argument("--generate", "-g", action="store_true")
+        sub.add_argument("--output", "-o", default=None)
+        sub.add_argument("--token", "-t", default="${APIFY_API_TOKEN}")
+        opts = sub.parse_args(remaining)
+
+        results = catalog.search(opts.query)
+        if opts.category:
+            results = [s for s in results if s["category"] == opts.category]
+        header = f'"{opts.query}"'
+        if opts.category:
+            header += f" in [{opts.category}]"
+        print(f'\n  Search: {header} — {len(results)} result(s)\n  {_DIVIDER}')
+        if not results:
+            print("  No servers found. Try a broader term.")
+        for s in results:
+            print(f"  {s['slug']:<40} [{s['category']}]")
+            desc = s["description"]
+            desc_short = desc[:68] + "…" if len(desc) > 68 else desc
+            print(f"    {desc_short}")
+        print()
+
+        if opts.generate:
+            if not results:
+                print("  No results to generate config for.\n")
+            else:
+                slugs = [s["slug"] for s in results]
+                config = catalog.generate_config(slugs, apify_token=opts.token)
+                if opts.output:
+                    spinner = Spinner(f"Writing config for {len(slugs)} server(s)")
+                    spinner.start()
+                    try:
+                        with open(opts.output, "w") as _f:
+                            _json.dump(config, _f, indent=2)
+                    finally:
+                        spinner.stop(f"Config saved → {opts.output}")
+                else:
+                    print(_json.dumps(config, indent=2))
+                    print()
+
+    # ---- info ----
+    elif parsed.subcommand == "info":
+        sub = _ap.ArgumentParser(prog="mcp-use catalog info", add_help=False)
+        sub.add_argument("slug")
+        opts = sub.parse_args(remaining)
+
+        try:
+            s = catalog.get_server(opts.slug)
+        except KeyError as exc:
+            print(f"\n  ❌ {exc}\n")
+            sys.exit(1)
+
+        tags = ", ".join(s.get("tags", []))
+        actor_id = s["apify_actor"].replace("/", "~")
+        snippet_url = f"https://mcp.apify.com/sse?actors={actor_id}&token=${{APIFY_API_TOKEN}}"
+
+        print(f"\n  {s['name']}\n  {_DIVIDER}")
+        print(f"  Slug:         {s['slug']}")
+        print(f"  Category:     {s['category']}")
+        print(f"  Tags:         {tags}")
+        print(f"  Apify Actor:  {s['apify_actor']}")
+        print(f"  Description:  {s['description']}")
+        print(f"\n  Config snippet:")
+        print(f"    {{\"{s['slug']}\": {{\"url\": \"{snippet_url}\"}}}}")
+        print()
+
+    # ---- save ----
+    elif parsed.subcommand == "save":
+        sub = _ap.ArgumentParser(prog="mcp-use catalog save", add_help=False)
+        sub.add_argument("slugs", nargs="+")
+        sub.add_argument("--output", "-o", default="mcp_servers.json")
+        sub.add_argument("--token", "-t", default="${APIFY_API_TOKEN}")
+        sub.add_argument("--combined", action="store_true")
+        opts = sub.parse_args(remaining)
+
+        spinner = Spinner(f"Generating config for {len(opts.slugs)} server(s)")
+        spinner.start()
+        try:
+            catalog.save_config(opts.slugs, opts.output, apify_token=opts.token, combined=opts.combined)
+        except KeyError as exc:
+            spinner.stop()
+            print(f"\n  ❌ {exc}\n")
+            sys.exit(1)
+        spinner.stop(f"Config saved → {opts.output}")
+
+        print(f"  Servers included ({len(opts.slugs)}):")
+        for slug in opts.slugs:
+            print(f"    • {slug}")
+        if opts.token == "${APIFY_API_TOKEN}":
+            print("\n  Tip: set APIFY_API_TOKEN in your environment or pass --token <your-token>")
+        print()
+
+
 # ============= MAIN CLI FUNCTIONS =============
 
 
@@ -464,14 +648,22 @@ Available Commands:
   create     🚀 Create a new MCP project (server, agent, or both)
              Interactive wizard to scaffold your MCP project
 
+  catalog    📦 Browse and connect to 189 MCP servers from the API mega-list
+             Search, filter by category, and generate ready-to-use configs
+
   deploy     ☁️  Deploy your MCP project to the cloud
              (Coming soon - Cloud deployment from CLI)
 
 Examples:
-  uvx mcp-use create           # Start interactive project creation
-  uvx mcp-use deploy           # Deploy to cloud (coming soon)
-  uvx mcp-use --help           # Show this help message
-  uvx mcp-use --version        # Show version information
+  uvx mcp-use create                              # Start interactive project creation
+  uvx mcp-use catalog categories                  # Show all server categories
+  uvx mcp-use catalog search weather              # Find weather-related servers
+  uvx mcp-use catalog list --category search      # List all search servers
+  uvx mcp-use catalog info tavily-mcp-server      # Show server details
+  uvx mcp-use catalog save tavily-mcp-server wikipedia-mcp-server --output config.json
+  uvx mcp-use deploy                              # Deploy to cloud (coming soon)
+  uvx mcp-use --help                              # Show this help message
+  uvx mcp-use --version                           # Show version information
 
 For more information, visit: https://mcp-use.com
     """
@@ -556,10 +748,18 @@ def main(args=None):
     parser.add_argument("--help", "-h", action="store_true", help="Show help message")
 
     # Add subcommand as positional argument
-    parser.add_argument("command", nargs="?", choices=["create", "deploy"], help="Command to execute")
+    parser.add_argument("command", nargs="?", choices=["create", "catalog", "deploy"], help="Command to execute")
 
-    # Parse arguments
-    parsed_args = parser.parse_args(args)
+    # Parse known args so catalog sub-args are not swallowed
+    parsed_args, remaining = parser.parse_known_args(args)
+
+    # Catalog delegates its own help, so route it before the top-level help check
+    if parsed_args.command == "catalog":
+        # Re-include --help in remaining if it was captured by the main parser
+        if parsed_args.help:
+            remaining = ["--help"] + remaining
+        handle_catalog(remaining)
+        return
 
     # Handle help flag or no command
     if parsed_args.help or not parsed_args.command:

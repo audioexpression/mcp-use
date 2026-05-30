@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "firecrawl-mcp-server": {
+      "url": "https://mcp.apify.com/sse?actors=agentify~firecrawl-mcp-server&token=${APIFY_API_TOKEN}"
+    },
+    "tavily-mcp-server": {
+      "url": "https://mcp.apify.com/sse?actors=agentify~tavily-mcp-server&token=${APIFY_API_TOKEN}"
+    },
+    "google-search-mcp-server": {
+      "url": "https://mcp.apify.com/sse?actors=datascoutapi~google-search-mcp-server&token=${APIFY_API_TOKEN}"
+    },
+    "playwright-mcp-server": {
+      "url": "https://mcp.apify.com/sse?actors=jiri.spilka~playwright-mcp-server&token=${APIFY_API_TOKEN}"
+    },
+    "wikipedia-mcp-server": {
+      "url": "https://mcp.apify.com/sse?actors=agentify~wikipedia-mcp-server&token=${APIFY_API_TOKEN}"
+    },
+    "weather-mcp-server": {
+      "url": "https://mcp.apify.com/sse?actors=jiri.spilka~weather-mcp-server&token=${APIFY_API_TOKEN}"
+    },
+    "pubmed-mcp-server": {
+      "url": "https://mcp.apify.com/sse?actors=agentify~pubmed-mcp-server&token=${APIFY_API_TOKEN}"
+    },
+    "google-maps-mcp": {
+      "url": "https://mcp.apify.com/sse?actors=crawlerbros~google-maps-mcp&token=${APIFY_API_TOKEN}"
+    },
+    "discord-mcp-server": {
+      "url": "https://mcp.apify.com/sse?actors=bhansalisoft~discord-mcp-server&token=${APIFY_API_TOKEN}"
+    },
+    "slack-mcp": {
+      "url": "https://mcp.apify.com/sse?actors=parseforge~slack-mcp&token=${APIFY_API_TOKEN}"
+    }
+  }
+}

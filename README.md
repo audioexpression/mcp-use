@@ -94,6 +94,10 @@
     <td>Build your own agents with any framework using the LangChain adapter or create new adapters</td>
   </tr>
   <tr>
+    <td>📦 <a href="#server-catalog"><strong>Server Catalog</strong></a></td>
+    <td>Discover and connect to 189 curated MCP servers across 19 categories via the built-in catalog</td>
+  </tr>
+  <tr>
     <td>❓ <a href="https://mcp-use.com/what-should-we-build-next"><strong>What should we build next</strong></a></td>
     <td>Let us know what you'd like us to build next</td>
   </tr>
@@ -244,6 +248,95 @@ if __name__ == "__main__":
 ```
 
 This streaming interface is ideal for applications that require real-time updates, such as chatbots, dashboards, or interactive notebooks.
+
+## Server Catalog
+
+mcp-use ships with a built-in catalog of **189 curated MCP servers** across **19 categories** (search, AI, data scraping, social media, ecommerce, travel, jobs, news, SEO, and more), all hosted on the [Apify](https://apify.com) platform and accessible via a single SSE endpoint.
+
+### Python API
+
+```python
+from mcp_use import MCPServerCatalog
+
+catalog = MCPServerCatalog()
+print(repr(catalog))
+# MCPServerCatalog(189 servers, 19 categories)
+
+# Browse
+print(catalog.categories())
+# ['ai', 'data_scraping', 'developer_tools', 'ecommerce', 'jobs', 'news', ...]
+
+for s in catalog.list_servers(category="search"):
+    print(s["slug"], "—", s["description"][:60])
+
+# Search by name, description, or tag
+results = catalog.search("weather")
+for s in results:
+    print(s["slug"])
+
+# Get details
+s = catalog.get_server("tavily-mcp-server")
+print(s["apify_actor"])  # agentify/tavily-mcp-server
+
+# Generate a ready-to-use mcp-use config
+config = catalog.generate_config(
+    ["tavily-mcp-server", "wikipedia-mcp-server"],
+    apify_token="your_apify_token",
+)
+
+# Save config to disk
+catalog.save_config(
+    slugs=["tavily-mcp-server", "wikipedia-mcp-server"],
+    filepath="my_servers.json",
+    apify_token="your_apify_token",
+)
+
+# Create an MCPClient directly (combined=True packs all actors into one connection)
+client = catalog.create_client(
+    ["tavily-mcp-server", "wikipedia-mcp-server"],
+    apify_token="your_apify_token",
+    combined=True,
+)
+```
+
+### Running an agent from the catalog
+
+```python
+import asyncio, os
+from langchain_anthropic import ChatAnthropic
+from mcp_use import MCPAgent, MCPServerCatalog
+
+async def main():
+    catalog = MCPServerCatalog()
+    client = catalog.create_client(
+        ["tavily-mcp-server", "wikipedia-mcp-server", "weather-mcp-server"],
+        apify_token=os.environ["APIFY_API_TOKEN"],
+        combined=True,
+    )
+    agent = MCPAgent(llm=ChatAnthropic(model="claude-opus-4-8"), client=client, max_steps=10)
+    result = await agent.run("What is the weather in Paris right now?")
+    print(result)
+
+asyncio.run(main())
+```
+
+### CLI
+
+```bash
+# Browse
+mcp-use catalog categories
+mcp-use catalog list --category search
+mcp-use catalog info tavily-mcp-server
+
+# Search and instantly generate a config
+mcp-use catalog search weather --generate --output weather.json --token $APIFY_API_TOKEN
+
+# Save a hand-picked config
+mcp-use catalog save tavily-mcp-server wikipedia-mcp-server \
+    --output research.json --token $APIFY_API_TOKEN --combined
+```
+
+> You need an [Apify API token](https://apify.com) to use catalog servers. Set `APIFY_API_TOKEN` in your environment or pass `--token`.
 
 # Example Use Cases
 
