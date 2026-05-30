@@ -48,12 +48,13 @@ def _check_format(servers: list[dict]) -> list[str]:
 
 
 def _check_endpoint(actor: str, token: str) -> tuple[int, str]:
-    """HEAD-request the SSE URL; return (status_code, error_or_empty)."""
+    """GET the Apify actor metadata API to verify the actor exists."""
+    # Use the Apify REST API — the SSE endpoint is streaming-only and rejects HEAD.
+    # /v2/acts/{owner}~{name} returns 200 if the actor is public/accessible, 404 if not.
     actor_id = actor.replace("/", "~")
-    url = f"{APIFY_BASE}?actors={actor_id}&token={token}"
+    url = f"https://api.apify.com/v2/acts/{actor_id}?token={token}"
     try:
-        req = urllib.request.Request(url, method="HEAD")
-        req.add_header("Accept", "text/event-stream")
+        req = urllib.request.Request(url)
         with urllib.request.urlopen(req, timeout=10) as resp:
             return resp.status, ""
     except urllib.error.HTTPError as exc:
