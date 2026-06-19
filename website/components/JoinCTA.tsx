@@ -57,14 +57,6 @@ export default function JoinCTA() {
               >
                 Register via WhatsApp
               </a>
-              <a
-                href="https://wa.me/6281384474406"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="border-2 border-[#04091d] text-[#04091d] px-8 py-4 rounded-xl font-heading font-700 text-sm uppercase tracking-wider hover:bg-[#04091d] hover:text-[#ffc200] transition-all duration-200"
-              >
-                Ask a Question
-              </a>
             </div>
           </div>
 
