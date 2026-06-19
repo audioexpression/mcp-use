@@ -21,18 +21,8 @@ export default function Hero() {
       {/* Content */}
       <div className="relative z-10 flex flex-col items-center text-center px-4 pt-20 pb-16">
         {/* Crest */}
-        <div className="mb-6 drop-shadow-2xl"
-          style={{ filter: "drop-shadow(0 0 32px rgba(255,194,0,0.3))" }}
-        >
-          <BulldogCrest size={140} />
-        </div>
-
-        {/* Club name */}
-        <h1 className="font-heading font-900 text-5xl sm:text-6xl md:text-8xl uppercase tracking-tight leading-none text-white mb-2">
-          Bali Bulldogs
-        </h1>
-        <div className="font-heading font-700 text-xl sm:text-2xl md:text-3xl uppercase tracking-[0.3em] text-[#ffc200] mb-6">
-          Football Club
+        <div className="mb-8">
+          <BulldogCrest size={200} />
         </div>
 
         {/* Tagline */}

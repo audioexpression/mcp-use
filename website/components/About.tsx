@@ -1,3 +1,5 @@
+import Image from "next/image";
+
 export default function About() {
   return (
     <section id="about" className="py-20 md:py-28 bg-white">
@@ -67,20 +69,13 @@ export default function About() {
                 }}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-8">
-                <svg viewBox="0 0 100 120" width="120" height="144" className="mb-4 opacity-80">
-                  <path
-                    d="M50 4L96 22V72C96 97 74 112 50 118C26 112 4 97 4 72V22L50 4Z"
-                    fill="none"
-                    stroke="#ffc200"
-                    strokeWidth="2"
-                  />
-                  <text x="50" y="70" textAnchor="middle" fill="#ffc200" fontSize="16" fontWeight="800" fontFamily="Arial">
-                    BULLDOGS
-                  </text>
-                  <text x="50" y="88" textAnchor="middle" fill="white" fontSize="10" fontFamily="Arial">
-                    BALI FC
-                  </text>
-                </svg>
+                <Image
+                  src="/logo.png"
+                  alt="Bali Bulldogs FC"
+                  width={260}
+                  height={260}
+                  className="object-contain mb-4"
+                />
                 <div className="font-heading font-700 text-xl text-[#ffc200]">The Bulldogs Arena</div>
                 <div className="text-white/60 text-sm mt-2">Our Home. Our Pride.</div>
               </div>
