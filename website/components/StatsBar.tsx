@@ -1,7 +1,7 @@
 const stats = [
   { icon: "🏟️", value: "The Bulldogs Arena", label: "Home Ground" },
-  { icon: "⚽", value: "450+", label: "Active Players" },
-  { icon: "🏆", value: "6", label: "Teams" },
+  { icon: "⚽", value: "300+", label: "Active Players" },
+  { icon: "🏆", value: "15", label: "Teams" },
   { icon: "📅", value: "2020", label: "Year Founded" },
 ];
 

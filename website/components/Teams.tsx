@@ -1,63 +1,30 @@
-const teams = [
+const categories = [
   {
-    name: "Men's 1st XI",
-    emoji: "⚽",
-    color: "#1a56db",
-    accent: "#ffc200",
-    description: "Our flagship adult men's squad — the heart of the Bulldogs.",
-    players: "~25 players",
-    kit: "Royal Blue",
-    badge: "Senior",
-  },
-  {
-    name: "Men's Social",
-    emoji: "🤝",
-    color: "#1243c0",
-    accent: "#ffc200",
-    description: "Open-age social football for adults who love the game.",
-    players: "Open",
-    kit: "Yellow",
-    badge: "Social",
-  },
-  {
-    name: "35+ Masters",
-    emoji: "🦁",
-    color: "#091c5f",
-    accent: "#ffc200",
-    description: "Competitive but fun football for our experienced legends.",
-    players: "~20 players",
-    kit: "Royal Blue",
-    badge: "Masters",
-  },
-  {
-    name: "Women's Team",
-    emoji: "💪",
-    color: "#0d309e",
-    accent: "#ffc200",
-    description: "Fast-growing women's squad with passion and determination.",
-    players: "~18 players",
-    kit: "Royal Blue",
-    badge: "Women",
-  },
-  {
-    name: "Junior Boys & Girls",
+    name: "Junior",
     emoji: "⭐",
+    ageRange: "Toddlers – U12",
     color: "#ffc200",
-    accent: "#04091d",
-    description: "Kindy through U18 — developing the next generation of Bulldogs.",
-    players: "200+ players",
-    kit: "Blue & Yellow",
-    badge: "Juniors",
+    textColor: "#04091d",
+    teams: ["Toddlers", "Kindy", "U6", "U8", "U10", "U12", "U12 Girls"],
+    description: "Our youngest Bulldogs — building skills, confidence, and a love for football from the very first kick.",
   },
   {
-    name: "Academy",
+    name: "Youth",
     emoji: "🎓",
-    color: "#122460",
-    accent: "#ffc200",
-    description: "Elite development pathway for our most dedicated young players.",
-    players: "Selected",
-    kit: "Navy",
-    badge: "Academy",
+    ageRange: "U14 – U18",
+    color: "#1a56db",
+    textColor: "#ffffff",
+    teams: ["U14", "U15 Elite", "U16", "U18 Girls"],
+    description: "Elite development for our teenage players stepping up to the next level of competitive football.",
+  },
+  {
+    name: "Adult",
+    emoji: "⚽",
+    ageRange: "18+ Years",
+    color: "#04091d",
+    textColor: "#ffffff",
+    teams: ["1st Team", "Social Team", "Legends 35+", "Masters 45+"],
+    description: "Competitive, social, and masters football — a team for every adult Bulldog.",
   },
 ];
 
@@ -74,21 +41,18 @@ export default function Teams() {
             Our Teams
           </h2>
           <p className="mt-4 text-gray-500 max-w-xl mx-auto">
-            From Kindy to Masters — the Bulldogs have a team for everyone. Find your squad below.
+            From Toddlers to Masters — 15 teams, 300+ players, one Bulldogs family.
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-          {teams.map((team) => (
-            <div
-              key={team.name}
-              className="card-lift bg-white rounded-2xl overflow-hidden shadow-md border border-gray-100"
-            >
-              {/* Top banner */}
+        {/* Category Cards */}
+        <div className="grid md:grid-cols-3 gap-6">
+          {categories.map((cat) => (
+            <div key={cat.name} className="rounded-2xl overflow-hidden shadow-md">
+              {/* Header */}
               <div
-                className="h-28 flex items-center justify-center relative overflow-hidden"
-                style={{ background: team.color }}
+                className="px-6 pt-6 pb-5 relative overflow-hidden"
+                style={{ background: cat.color }}
               >
                 <div
                   className="absolute inset-0 opacity-10"
@@ -98,37 +62,42 @@ export default function Teams() {
                     backgroundSize: "14px 14px",
                   }}
                 />
-                <div className="relative text-center">
-                  <span className="text-4xl">{team.emoji}</span>
-                  <div
-                    className="mt-1 font-heading font-800 text-xs uppercase tracking-widest px-3 py-0.5 rounded-full inline-block"
-                    style={{ background: team.accent, color: team.color === "#ffc200" ? "#04091d" : "#ffc200" }}
-                  >
-                    {team.badge}
+                <div className="relative flex items-center gap-3">
+                  <span className="text-3xl">{cat.emoji}</span>
+                  <div>
+                    <div
+                      className="font-heading font-900 text-2xl uppercase tracking-wide"
+                      style={{ color: cat.textColor }}
+                    >
+                      {cat.name}
+                    </div>
+                    <div
+                      className="font-heading font-600 text-xs uppercase tracking-widest"
+                      style={{ color: cat.textColor, opacity: 0.65 }}
+                    >
+                      {cat.ageRange}
+                    </div>
                   </div>
                 </div>
               </div>
 
-              {/* Content */}
-              <div className="p-5">
-                <h3 className="font-heading font-800 text-lg uppercase tracking-wide text-[#04091d] mb-2">
-                  {team.name}
-                </h3>
-                <p className="text-gray-500 text-sm leading-relaxed mb-4">{team.description}</p>
+              {/* Body */}
+              <div className="bg-white p-6">
+                <p className="text-gray-500 text-sm leading-relaxed mb-5">
+                  {cat.description}
+                </p>
 
-                <div className="flex gap-4 text-xs">
-                  <div>
-                    <div className="font-heading font-700 text-[#1a56db] uppercase tracking-wide">Players</div>
-                    <div className="text-gray-600 mt-0.5">{team.players}</div>
-                  </div>
-                  <div>
-                    <div className="font-heading font-700 text-[#1a56db] uppercase tracking-wide">Kit</div>
-                    <div className="text-gray-600 mt-0.5">{team.kit}</div>
-                  </div>
+                <div className="flex flex-wrap gap-2 mb-6">
+                  {cat.teams.map((team) => (
+                    <span
+                      key={team}
+                      className="font-heading font-700 text-xs uppercase tracking-wide px-3 py-1.5 rounded-full bg-[#f0f4ff] text-[#1a56db] border border-[#1a56db]/20"
+                    >
+                      {team}
+                    </span>
+                  ))}
                 </div>
-              </div>
 
-              <div className="px-5 pb-5">
                 <a
                   href="#join"
                   className="block text-center py-2.5 rounded-lg text-sm font-heading font-700 uppercase tracking-wide border-2 border-[#1a56db] text-[#1a56db] hover:bg-[#1a56db] hover:text-white transition-all duration-200"

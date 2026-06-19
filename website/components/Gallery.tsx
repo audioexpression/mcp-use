@@ -2,40 +2,45 @@
 
 import { useState } from "react";
 
-const photos = [
+type PhotoTile = {
+  id: number;
+  caption: string;
+  category: string;
+  src?: string;
+  alt?: string;
+  objectPosition?: string;
+  gradient?: string;
+  icon?: string;
+};
+
+const photos: PhotoTile[] = [
   {
     id: 1,
-    caption: "Training at The Bulldogs Arena",
-    category: "Training",
-    span: "col-span-2 row-span-2",
-    aspect: "aspect-square",
-    gradient: "from-[#060f30] to-[#1a56db]",
-    icon: "⚽",
+    caption: "Juniors Training at The Bulldogs Arena",
+    category: "Juniors",
+    src: "/gallery/juniors-arena.jpg",
+    alt: "Young Bulldogs players training indoors at the arena",
+    objectPosition: "center",
   },
   {
     id: 2,
-    caption: "Junior Kick-Off Day",
-    category: "Juniors",
-    span: "col-span-1 row-span-1",
-    aspect: "aspect-[4/3]",
-    gradient: "from-[#b8920a] to-[#ffc200]",
-    icon: "⭐",
+    caption: "Bulldogs Player on the Pitch",
+    category: "Youth",
+    src: "/gallery/player-portrait.jpg",
+    alt: "Bali Bulldogs FC player #5 in yellow kit",
+    objectPosition: "top",
   },
   {
     id: 3,
     caption: "Women's Squad",
     category: "Women's Team",
-    span: "col-span-1 row-span-1",
-    aspect: "aspect-[4/3]",
     gradient: "from-[#091c5f] to-[#0d309e]",
     icon: "💪",
   },
   {
     id: 4,
     caption: "Masters on the Pitch",
-    category: "35+ Masters",
-    span: "col-span-1 row-span-1",
-    aspect: "aspect-[4/3]",
+    category: "Legends",
     gradient: "from-[#04091d] to-[#122460]",
     icon: "🦁",
   },
@@ -43,8 +48,6 @@ const photos = [
     id: 5,
     caption: "Club Social Night",
     category: "Community",
-    span: "col-span-2 row-span-1",
-    aspect: "aspect-[16/7]",
     gradient: "from-[#1243c0] to-[#1a56db]",
     icon: "🎉",
   },
@@ -52,8 +55,6 @@ const photos = [
     id: 6,
     caption: "End of Season Awards",
     category: "Achievement",
-    span: "col-span-1 row-span-1",
-    aspect: "aspect-[4/3]",
     gradient: "from-[#060f30] to-[#091c5f]",
     icon: "🏆",
   },
@@ -61,8 +62,6 @@ const photos = [
     id: 7,
     caption: "Academy Session",
     category: "Academy",
-    span: "col-span-1 row-span-1",
-    aspect: "aspect-[4/3]",
     gradient: "from-[#0c2680] to-[#1a56db]",
     icon: "🎓",
   },
@@ -70,8 +69,6 @@ const photos = [
     id: 8,
     caption: "The Bulldogs Family",
     category: "Club Culture",
-    span: "col-span-1 row-span-1",
-    aspect: "aspect-[4/3]",
     gradient: "from-[#b8920a] to-[#ffc200]",
     icon: "🐾",
   },
@@ -96,21 +93,28 @@ export default function Gallery() {
           </p>
         </div>
 
-        {/* Grid */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4 auto-rows-fr">
+        {/* Uniform Grid — 2 cols mobile, 4 cols desktop */}
+        <div className="grid grid-cols-2 md:grid-cols-4 gap-3 md:gap-4">
           {photos.map((photo) => (
             <div
               key={photo.id}
-              className={`${photo.span} relative overflow-hidden rounded-2xl cursor-pointer group`}
+              className="relative aspect-[4/3] overflow-hidden rounded-2xl cursor-pointer group"
               onMouseEnter={() => setHovered(photo.id)}
               onMouseLeave={() => setHovered(null)}
             >
-              {/* Placeholder image area */}
-              <div className={`w-full ${photo.aspect} md:h-full md:aspect-auto relative`}>
+              {photo.src ? (
+                // Real photo
+                <img
+                  src={photo.src}
+                  alt={photo.alt ?? photo.caption}
+                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                  style={{ objectPosition: photo.objectPosition ?? "center" }}
+                />
+              ) : (
+                // Gradient placeholder
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${photo.gradient} transition-transform duration-500 group-hover:scale-105`}
                 >
-                  {/* Club pattern overlay */}
                   <div
                     className="absolute inset-0 opacity-10"
                     style={{
@@ -119,8 +123,6 @@ export default function Gallery() {
                       backgroundSize: "18px 18px",
                     }}
                   />
-
-                  {/* Upload prompt */}
                   <div className="absolute inset-0 flex flex-col items-center justify-center">
                     <div className="text-4xl md:text-5xl mb-2 opacity-40">{photo.icon}</div>
                     <div className="text-white/20 text-xs font-heading uppercase tracking-widest text-center px-4">
@@ -128,34 +130,34 @@ export default function Gallery() {
                     </div>
                   </div>
                 </div>
+              )}
 
-                {/* Hover overlay */}
-                <div
-                  className={`absolute inset-0 bg-[#04091d]/70 flex flex-col items-end justify-end p-4 transition-opacity duration-300 ${
-                    hovered === photo.id ? "opacity-100" : "opacity-0"
-                  }`}
+              {/* Hover overlay */}
+              <div
+                className={`absolute inset-0 bg-[#04091d]/70 flex flex-col items-end justify-end p-4 transition-opacity duration-300 ${
+                  hovered === photo.id ? "opacity-100" : "opacity-0"
+                }`}
+              >
+                <span
+                  className="font-heading font-700 text-xs uppercase tracking-widest px-2.5 py-1 rounded-full mb-2"
+                  style={{ background: "#ffc200", color: "#04091d" }}
                 >
-                  <span
-                    className="font-heading font-700 text-xs uppercase tracking-widest px-2.5 py-1 rounded-full mb-2"
-                    style={{ background: "#ffc200", color: "#04091d" }}
-                  >
-                    {photo.category}
-                  </span>
-                  <p className="font-heading font-800 text-sm text-white uppercase tracking-wide leading-tight">
-                    {photo.caption}
-                  </p>
-                </div>
+                  {photo.category}
+                </span>
+                <p className="font-heading font-800 text-sm text-white uppercase tracking-wide leading-tight">
+                  {photo.caption}
+                </p>
+              </div>
 
-                {/* Always-visible category pill */}
-                <div
-                  className={`absolute bottom-3 left-3 transition-opacity duration-300 ${
-                    hovered === photo.id ? "opacity-0" : "opacity-100"
-                  }`}
-                >
-                  <span className="font-heading font-700 text-xs uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/40 text-white/70 backdrop-blur-sm">
-                    {photo.category}
-                  </span>
-                </div>
+              {/* Always-visible category pill */}
+              <div
+                className={`absolute bottom-3 left-3 transition-opacity duration-300 ${
+                  hovered === photo.id ? "opacity-0" : "opacity-100"
+                }`}
+              >
+                <span className="font-heading font-700 text-xs uppercase tracking-widest px-2.5 py-1 rounded-full bg-black/40 text-white/70 backdrop-blur-sm">
+                  {photo.category}
+                </span>
               </div>
             </div>
           ))}
@@ -163,10 +165,6 @@ export default function Gallery() {
 
         {/* CTA */}
         <div className="text-center mt-10">
-          <p className="text-white/30 text-xs mb-4">
-            Replace placeholders with your own photos — just swap the background with a Next.js{" "}
-            <code className="text-white/40">Image</code> component
-          </p>
           <a
             href="https://www.instagram.com/balibulldogsfc/"
             target="_blank"
