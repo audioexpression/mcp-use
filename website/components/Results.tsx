@@ -5,7 +5,7 @@ const results = [
     awayTeam: "Canggu FC",
     homeScore: 3,
     awayScore: 1,
-    result: "win" as const,
+    result: "W",
     competition: "Men's 1st XI",
   },
   {
@@ -14,141 +14,127 @@ const results = [
     awayTeam: "Bali Bulldogs",
     homeScore: 2,
     awayScore: 2,
-    result: "draw" as const,
+    result: "D",
     competition: "Men's Social",
   },
   {
     date: "1 Jun 2026",
     homeTeam: "Bali Bulldogs",
-    awayTeam: "Kuta Strikers",
+    awayTeam: "Kuta Rangers",
     homeScore: 5,
     awayScore: 0,
-    result: "win" as const,
-    competition: "Women's Team",
-  },
-  {
-    date: "25 May 2026",
-    homeTeam: "Ubud Warriors",
-    awayTeam: "Bali Bulldogs",
-    homeScore: 3,
-    awayScore: 2,
-    result: "loss" as const,
+    result: "W",
     competition: "35+ Masters",
   },
   {
-    date: "18 May 2026",
+    date: "25 May 2026",
     homeTeam: "Bali Bulldogs",
-    awayTeam: "Denpasar City",
+    awayTeam: "Ubud Warriors",
     homeScore: 1,
-    awayScore: 1,
-    result: "draw" as const,
+    awayScore: 3,
+    result: "L",
+    competition: "Women's Team",
+  },
+  {
+    date: "18 May 2026",
+    homeTeam: "Denpasar City",
+    awayTeam: "Bali Bulldogs",
+    homeScore: 0,
+    awayScore: 4,
+    result: "W",
     competition: "Men's 1st XI",
   },
   {
     date: "11 May 2026",
     homeTeam: "Bali Bulldogs",
-    awayTeam: "Nusa Dua FC",
-    homeScore: 4,
+    awayTeam: "Beach FC",
+    homeScore: 2,
     awayScore: 2,
-    result: "win" as const,
-    competition: "Men's 1st XI",
+    result: "D",
+    competition: "Women's Team",
   },
 ];
 
-const resultMeta: Record<"win" | "draw" | "loss", { label: string; bg: string; text: string }> = {
-  win: { label: "W", bg: "#16a34a", text: "white" },
-  draw: { label: "D", bg: "#ffc200", text: "#04091d" },
-  loss: { label: "L", bg: "#dc2626", text: "white" },
+const resultStyles: Record<string, { bg: string; text: string; label: string }> = {
+  W: { bg: "#16a34a", text: "white", label: "Win" },
+  D: { bg: "#ca8a04", text: "white", label: "Draw" },
+  L: { bg: "#dc2626", text: "white", label: "Loss" },
 };
 
 export default function Results() {
   return (
-    <section id="results" className="py-20 md:py-28 bg-[#04091d]">
+    <section id="results" className="py-12 md:py-16 bg-[#04091d]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
-        <div className="flex flex-col md:flex-row md:items-end md:justify-between mb-12 gap-4">
-          <div>
-            <p className="font-heading font-700 text-[#ffc200] uppercase tracking-widest text-sm mb-3">
-              SportEasy Data
-            </p>
-            <h2 className="accent-bar font-heading font-900 text-4xl md:text-5xl uppercase leading-tight text-white">
-              Recent Results
-            </h2>
-          </div>
-          <div className="text-white/50 text-sm max-w-xs">
-            Results pulled from SportEasy. Full integration &amp; standings coming soon.
-          </div>
+        <div className="text-center mb-10">
+          <p className="font-heading font-700 text-[#ffc200] uppercase tracking-widest text-sm mb-3">
+            Powered by SportEasy
+          </p>
+          <h2 className="accent-bar font-heading font-900 text-4xl md:text-5xl uppercase leading-tight text-white text-center">
+            Recent Results
+          </h2>
+          <p className="mt-4 text-white/40 max-w-xl mx-auto text-sm">
+            Latest match results across all Bulldog squads.
+          </p>
         </div>
 
         {/* Results grid */}
-        <div className="grid md:grid-cols-2 gap-4 mb-10">
-          {results.map((r, i) => {
-            const meta = resultMeta[r.result];
-            const bulldogsHome = r.homeTeam === "Bali Bulldogs";
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-4 mb-10">
+          {results.map((r) => {
+            const style = resultStyles[r.result];
             return (
-              <div
-                key={i}
-                className={`result-card ${r.result} bg-[#07122e] rounded-xl p-5 flex items-center gap-4`}
-              >
-                {/* Result badge */}
-                <div
-                  className="w-10 h-10 rounded-lg flex items-center justify-center font-heading font-900 text-lg flex-shrink-0"
-                  style={{ background: meta.bg, color: meta.text }}
-                >
-                  {meta.label}
+              <div key={r.date + r.homeTeam} className="result-card rounded-xl p-5">
+                <div className="flex items-center justify-between mb-3">
+                  <span className="text-white/40 text-xs font-heading uppercase tracking-wide">{r.date}</span>
+                  <span
+                    className="font-heading font-800 text-xs uppercase tracking-widest px-2.5 py-1 rounded-full"
+                    style={{ background: style.bg, color: style.text }}
+                  >
+                    {style.label}
+                  </span>
                 </div>
 
-                {/* Match info */}
-                <div className="flex-1 min-w-0">
-                  <div className="text-white/40 text-xs font-heading font-600 uppercase tracking-wide mb-1">
-                    {r.competition} · {r.date}
-                  </div>
-                  <div className="flex items-center gap-2">
-                    <span
-                      className={`font-heading font-700 text-sm truncate ${
-                        bulldogsHome ? "text-[#ffc200]" : "text-white"
-                      }`}
-                    >
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex-1 text-right">
+                    <div className="font-heading font-800 text-sm uppercase tracking-wide text-white leading-tight">
                       {r.homeTeam}
-                    </span>
-                    <span className="font-heading font-900 text-white text-base">
-                      {r.homeScore} – {r.awayScore}
-                    </span>
-                    <span
-                      className={`font-heading font-700 text-sm truncate ${
-                        !bulldogsHome ? "text-[#ffc200]" : "text-white"
-                      }`}
-                    >
-                      {r.awayTeam}
-                    </span>
+                    </div>
                   </div>
+                  <div className="flex items-center gap-1.5 flex-shrink-0">
+                    <span className="font-heading font-900 text-2xl text-[#ffc200]">{r.homeScore}</span>
+                    <span className="text-white/30 font-heading font-700 text-lg">–</span>
+                    <span className="font-heading font-900 text-2xl text-[#ffc200]">{r.awayScore}</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="font-heading font-800 text-sm uppercase tracking-wide text-white leading-tight">
+                      {r.awayTeam}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-3 pt-3 border-t border-white/10">
+                  <span className="text-[#ffc200]/70 text-xs font-heading uppercase tracking-widest">
+                    {r.competition}
+                  </span>
                 </div>
               </div>
             );
           })}
         </div>
 
-        {/* SportEasy CTA */}
+        {/* SportEasy note */}
         <div className="text-center">
-          <div className="inline-block bg-[#07122e] border border-[#1a56db]/40 rounded-2xl p-6 max-w-lg">
-            <div className="text-[#ffc200] font-heading font-700 text-sm uppercase tracking-widest mb-2">
-              Coming Soon
-            </div>
-            <h3 className="font-heading font-800 text-white text-xl uppercase mb-3">
-              Full Results &amp; Standings Portal
-            </h3>
-            <p className="text-white/50 text-sm mb-5">
-              We&apos;re building a native results, fixtures, and stats hub — powered by your SportEasy data but living right here on your site.
-            </p>
-            <a
-              href="https://www.sporteasy.net"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn-royal inline-flex px-6 py-3 rounded-lg text-sm font-heading font-700 uppercase tracking-wide"
-            >
-              View on SportEasy →
-            </a>
-          </div>
+          <p className="text-white/30 text-xs mb-4">
+            Full fixtures & stats managed via SportEasy
+          </p>
+          <a
+            href="https://www.sporteasy.net"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex border border-[#ffc200]/30 text-[#ffc200] px-6 py-3 rounded-xl font-heading font-700 text-sm uppercase tracking-wide hover:border-[#ffc200] hover:bg-[#ffc200]/10 transition-all duration-200"
+          >
+            Full Results Portal (Coming Soon)
+          </a>
         </div>
       </div>
     </section>

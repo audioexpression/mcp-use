@@ -63,7 +63,7 @@ const teams = [
 
 export default function Teams() {
   return (
-    <section id="teams" className="py-20 md:py-28 bg-[#f0f4ff]">
+    <section id="teams" className="py-12 md:py-16 bg-[#f0f4ff]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         {/* Heading */}
         <div className="text-center mb-14">

@@ -1,6 +1,6 @@
 export default function JoinCTA() {
   return (
-    <section id="join" className="py-20 md:py-28 bg-[#ffc200] relative overflow-hidden">
+    <section id="join" className="py-12 md:py-16 bg-[#ffc200] relative overflow-hidden">
       {/* Background pattern */}
       <div
         className="absolute inset-0 opacity-10"
@@ -50,13 +50,17 @@ export default function JoinCTA() {
 
             <div className="flex flex-wrap gap-4">
               <a
-                href="mailto:info@balibulldogsfc.com"
+                href="https://wa.me/6281384474406?text=Hi%2C%20I%27d%20like%20to%20register%20with%20Bali%20Bulldogs%20FC!"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-[#04091d] text-[#ffc200] px-8 py-4 rounded-xl font-heading font-700 text-sm uppercase tracking-wider hover:bg-[#1a56db] transition-colors duration-200"
               >
-                Register Now
+                Register via WhatsApp
               </a>
               <a
-                href="#contact"
+                href="https://wa.me/6281384474406"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="border-2 border-[#04091d] text-[#04091d] px-8 py-4 rounded-xl font-heading font-700 text-sm uppercase tracking-wider hover:bg-[#04091d] hover:text-[#ffc200] transition-all duration-200"
               >
                 Ask a Question

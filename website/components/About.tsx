@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-white">
+    <section id="about" className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text */}
           <div>
             <p className="font-heading font-700 text-[#1a56db] uppercase tracking-widest text-sm mb-4">
@@ -52,14 +52,12 @@ export default function About() {
 
           {/* Visual */}
           <div className="relative">
-            {/* Main image placeholder */}
             <div
               className="w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl"
               style={{
                 background: "linear-gradient(135deg, #060f30 0%, #1243c0 50%, #1a56db 100%)",
               }}
             >
-              {/* Pattern overlay */}
               <div
                 className="absolute inset-0 opacity-10"
                 style={{
@@ -69,13 +67,15 @@ export default function About() {
                 }}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-8">
-                <Image
-                  src="/logo.png"
-                  alt="Bali Bulldogs FC"
-                  width={260}
-                  height={260}
-                  className="object-contain mb-4"
-                />
+                <div className="rounded-full overflow-hidden mb-4 border-4 border-[#ffc200]/40 shadow-2xl" style={{ width: 220, height: 220 }}>
+                  <Image
+                    src="/logo.png"
+                    alt="Bali Bulldogs FC"
+                    width={220}
+                    height={220}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
                 <div className="font-heading font-700 text-xl text-[#ffc200]">The Bulldogs Arena</div>
                 <div className="text-white/60 text-sm mt-2">Our Home. Our Pride.</div>
               </div>

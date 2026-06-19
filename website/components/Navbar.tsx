@@ -11,7 +11,7 @@ const links = [
   { label: "Results", href: "#results" },
   { label: "News", href: "#news" },
   { label: "Sponsors", href: "#sponsors" },
-  { label: "Contact", href: "#contact" },
+  { label: "Contact", href: "https://wa.me/6281384474406", external: true },
 ];
 
 export default function Navbar() {
@@ -53,6 +53,7 @@ export default function Navbar() {
               <a
                 key={l.href}
                 href={l.href}
+                {...("external" in l && l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
                 className="nav-link text-white/80 hover:text-white text-sm font-heading font-600 tracking-wide uppercase"
               >
                 {l.label}
@@ -106,6 +107,7 @@ export default function Navbar() {
             <a
               key={l.href}
               href={l.href}
+              {...("external" in l && l.external ? { target: "_blank", rel: "noopener noreferrer" } : {})}
               onClick={() => setMenuOpen(false)}
               className="block py-3 text-white/80 hover:text-[#ffc200] font-heading font-600 text-sm uppercase tracking-wide border-b border-white/10 transition-colors"
             >

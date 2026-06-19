@@ -8,6 +8,7 @@ import News from "@/components/News";
 import Sponsors from "@/components/Sponsors";
 import JoinCTA from "@/components/JoinCTA";
 import Footer from "@/components/Footer";
+import WhatsAppFloat from "@/components/WhatsAppFloat";
 
 export default function Home() {
   return (
@@ -24,6 +25,7 @@ export default function Home() {
         <JoinCTA />
       </main>
       <Footer />
+      <WhatsAppFloat />
     </>
   );
 }
