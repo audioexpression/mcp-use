@@ -18,7 +18,7 @@ const photos: PhotoTile[] = [
     id: 1,
     caption: "Juniors Training at The Bulldogs Arena",
     category: "Juniors",
-    src: "/gallery/juniors-arena.jpg",
+    src: "/AQ6A5149.jpg",
     alt: "Young Bulldogs players training indoors at the arena",
     objectPosition: "center",
   },
@@ -26,8 +26,8 @@ const photos: PhotoTile[] = [
     id: 2,
     caption: "Bulldogs Player on the Pitch",
     category: "Youth",
-    src: "/gallery/player-portrait.jpg",
-    alt: "Bali Bulldogs FC player #5 in yellow kit",
+    src: "/d6e6b659-8559-43de-b88e-fa40841519d8.jpg",
+    alt: "Bali Bulldogs FC player in yellow kit",
     objectPosition: "top",
   },
   {
@@ -103,7 +103,6 @@ export default function Gallery() {
               onMouseLeave={() => setHovered(null)}
             >
               {photo.src ? (
-                // Real photo
                 <img
                   src={photo.src}
                   alt={photo.alt ?? photo.caption}
@@ -111,7 +110,6 @@ export default function Gallery() {
                   style={{ objectPosition: photo.objectPosition ?? "center" }}
                 />
               ) : (
-                // Gradient placeholder
                 <div
                   className={`absolute inset-0 bg-gradient-to-br ${photo.gradient} transition-transform duration-500 group-hover:scale-105`}
                 >
