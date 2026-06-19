@@ -20,33 +20,43 @@ type Category = {
 
 const categories: Category[] = [
   {
-    name: "Junior",
-    emoji: "⭐",
-    ageRange: "Toddlers – U12",
+    name: "Youngsters",
+    emoji: "🌟",
+    ageRange: "Toddlers – U6",
     color: "#ffc200",
     textColor: "#04091d",
-    description: "Our youngest Bulldogs — building skills, confidence, and a love for football from the very first kick.",
+    description: "Tiny feet, big dreams — introducing our littlest Bulldogs to football in a fun, nurturing environment.",
     teams: [
       { name: "Toddlers",       sessions: [{ days: "Mon & Wed", time: "2:30 – 3:15 PM" }] },
       { name: "Kindy & U6 (1)", sessions: [{ days: "Mon & Wed", time: "3:30 – 4:30 PM" }] },
       { name: "Kindy & U6 (2)", sessions: [{ days: "Tue & Thu", time: "3:00 – 4:00 PM" }] },
-      { name: "U8",             sessions: [{ days: "Mon & Wed", time: "4:30 – 6:00 PM" }] },
-      { name: "U10",            sessions: [{ days: "Tue & Thu", time: "4:00 – 5:30 PM" }] },
-      { name: "U12",            sessions: [{ days: "Tue & Thu", time: "5:30 – 7:00 PM" }] },
-      { name: "U12 Girls",      sessions: [{ days: "Fri",       time: "3:30 – 5:00 PM" }] },
+    ],
+  },
+  {
+    name: "Junior",
+    emoji: "⭐",
+    ageRange: "U8 – U12",
+    color: "#1a56db",
+    textColor: "#ffffff",
+    description: "Building fundamentals and team spirit — developing players from U8 through to U12.",
+    teams: [
+      { name: "U8",        sessions: [{ days: "Mon & Wed", time: "4:30 – 6:00 PM" }] },
+      { name: "U10",       sessions: [{ days: "Tue & Thu", time: "4:00 – 5:30 PM" }] },
+      { name: "U12",       sessions: [{ days: "Tue & Thu", time: "5:30 – 7:00 PM" }] },
+      { name: "U12 Girls", sessions: [{ days: "Fri",       time: "3:30 – 5:00 PM" }] },
     ],
   },
   {
     name: "Youth",
     emoji: "🎓",
     ageRange: "U14 – U18",
-    color: "#1a56db",
+    color: "#091c5f",
     textColor: "#ffffff",
     description: "Elite development for our teenage players stepping up to the next level of competitive football.",
     teams: [
-      { name: "U14",      sessions: [{ days: "Mon", time: "6:00 – 7:30 PM" }, { days: "Fri", time: "5:00 – 6:30 PM" }] },
+      { name: "U14",       sessions: [{ days: "Mon", time: "6:00 – 7:30 PM" }, { days: "Fri", time: "5:00 – 6:30 PM" }] },
       { name: "U15 Elite", sessions: [{ days: "",    time: "Contact us" }] },
-      { name: "U16",      sessions: [{ days: "Wed", time: "6:00 – 7:30 PM" }, { days: "Fri", time: "5:00 – 6:30 PM" }] },
+      { name: "U16",       sessions: [{ days: "Wed", time: "6:00 – 7:30 PM" }, { days: "Fri", time: "5:00 – 6:30 PM" }] },
       { name: "U18 Girls", sessions: [{ days: "Mon & Wed", time: "6:00 – 7:30 PM" }] },
     ],
   },
@@ -79,12 +89,12 @@ export default function Teams() {
             Our Teams
           </h2>
           <p className="mt-4 text-gray-500 max-w-xl mx-auto">
-            From Toddlers to Masters — 15 teams, 300+ players, one Bulldogs family.
+            From Toddlers to Masters — 15 teams, 300+ players, one Bulldogs family. Find your squad below.
           </p>
         </div>
 
         {/* Category Cards */}
-        <div className="grid md:grid-cols-3 gap-6 items-start">
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6 items-start">
           {categories.map((cat) => (
             <div key={cat.name} className="rounded-2xl overflow-hidden shadow-md">
               {/* Header */}
