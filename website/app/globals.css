@@ -1,0 +1,160 @@
+@import "tailwindcss";
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+  --font-heading: var(--font-barlow);
+
+  /* Bali Bulldogs – Royal Blue */
+  --color-royal-50: #eef3ff;
+  --color-royal-100: #dce6ff;
+  --color-royal-200: #b8ccff;
+  --color-royal-300: #79a4ff;
+  --color-royal-400: #3d79ff;
+  --color-royal-500: #1a56db;
+  --color-royal-600: #1243c0;
+  --color-royal-700: #0d309e;
+  --color-royal-800: #0c2680;
+  --color-royal-900: #091c5f;
+  --color-royal-950: #060f30;
+
+  /* Bali Bulldogs – Sunflower Yellow */
+  --color-sunflower-300: #ffe066;
+  --color-sunflower-400: #ffd333;
+  --color-sunflower-500: #ffc200;
+  --color-sunflower-600: #e6ac00;
+  --color-sunflower-700: #b38600;
+
+  /* Dark Navy */
+  --color-navy-900: #04091d;
+  --color-navy-800: #07122e;
+  --color-navy-700: #0c1d46;
+  --color-navy-600: #122460;
+}
+
+:root {
+  --background: #ffffff;
+  --foreground: #111827;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+.font-heading {
+  font-family: var(--font-barlow), system-ui, sans-serif;
+}
+
+/* Hero gradient */
+.hero-bg {
+  background: linear-gradient(150deg, #04091d 0%, #091c5f 40%, #1243c0 100%);
+}
+
+/* Sunflower gradient button */
+.btn-sunflower {
+  background: linear-gradient(135deg, #ffc200 0%, #ffd333 100%);
+  color: #060f30;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-sunflower:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 194, 0, 0.4);
+}
+
+/* Royal blue gradient button */
+.btn-royal {
+  background: linear-gradient(135deg, #1a56db 0%, #3d79ff 100%);
+  color: #fff;
+  font-weight: 700;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.btn-royal:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(26, 86, 219, 0.4);
+}
+
+/* Card hover */
+.card-lift {
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+.card-lift:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 48px rgba(0, 0, 0, 0.12);
+}
+
+/* Yellow accent bar */
+.accent-bar::before {
+  content: "";
+  display: block;
+  width: 52px;
+  height: 4px;
+  border-radius: 2px;
+  background: #ffc200;
+  margin-bottom: 14px;
+}
+
+/* Nav underline hover */
+.nav-link {
+  position: relative;
+  transition: color 0.2s;
+}
+.nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: #ffc200;
+  transition: width 0.25s ease;
+}
+.nav-link:hover::after,
+.nav-link.active::after {
+  width: 100%;
+}
+
+/* Wave divider */
+.wave-bottom {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+/* Result card */
+.result-card {
+  border-left: 4px solid #1a56db;
+  transition: border-color 0.2s;
+}
+.result-card.win {
+  border-left-color: #16a34a;
+}
+.result-card.loss {
+  border-left-color: #dc2626;
+}
+.result-card.draw {
+  border-left-color: #ffc200;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #07122e;
+}
+::-webkit-scrollbar-thumb {
+  background: #1a56db;
+  border-radius: 3px;
+}
