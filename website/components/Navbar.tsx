@@ -10,6 +10,7 @@ const links = [
   { label: "Teams", href: "#teams" },
   { label: "Results", href: "#results" },
   { label: "News", href: "#news" },
+  { label: "Gallery", href: "#gallery" },
   { label: "Sponsors", href: "#sponsors" },
   { label: "Contact", href: "https://wa.me/6281384474406", external: true },
 ];
@@ -48,7 +49,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav */}
-          <div className="hidden md:flex items-center gap-6 lg:gap-8">
+          <div className="hidden md:flex items-center gap-4 lg:gap-6">
             {links.map((l) => (
               <a
                 key={l.href}
@@ -99,7 +100,7 @@ export default function Navbar() {
       {/* Mobile menu */}
       <div
         className={`md:hidden transition-all duration-300 overflow-hidden ${
-          menuOpen ? "max-h-96 opacity-100" : "max-h-0 opacity-0"
+          menuOpen ? "max-h-screen opacity-100" : "max-h-0 opacity-0"
         }`}
       >
         <div className="bg-[#04091d]/98 backdrop-blur-md px-4 pb-6 pt-2 border-t border-white/10">
