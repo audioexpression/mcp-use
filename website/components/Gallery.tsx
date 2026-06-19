@@ -32,10 +32,11 @@ const photos: PhotoTile[] = [
   },
   {
     id: 3,
-    caption: "Women's Squad",
-    category: "Women's Team",
-    gradient: "from-[#091c5f] to-[#0d309e]",
-    icon: "💪",
+    caption: "U18 Girls Team",
+    category: "U18 Girls",
+    src: "/IMG_4825.jpg",
+    alt: "Bali Bulldogs U18 Girls Team",
+    objectPosition: "center",
   },
   {
     id: 4,
