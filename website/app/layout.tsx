@@ -17,7 +17,7 @@ const barlow = Barlow_Condensed({
 export const metadata: Metadata = {
   title: "Bali Bulldogs FC | We Never Walk Alone",
   description:
-    "Bali's leading football community. 450+ players across Junior, Adult, Masters and Women's teams. Founded 2020. Based at The Bulldogs Arena.",
+    "Bali's leading football community. 300+ players across Junior, Adult, Masters and Women's teams. Founded 2020. Based at The Bulldogs Arena.",
   keywords: ["Bali Bulldogs", "football club", "Bali FC", "soccer Bali", "Bali football"],
   openGraph: {
     title: "Bali Bulldogs FC",

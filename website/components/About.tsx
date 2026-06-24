@@ -2,9 +2,9 @@ import Image from "next/image";
 
 export default function About() {
   return (
-    <section id="about" className="py-20 md:py-28 bg-white">
+    <section id="about" className="py-12 md:py-16 bg-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid md:grid-cols-2 gap-12 md:gap-20 items-center">
+        <div className="grid md:grid-cols-2 gap-8 md:gap-12 items-center">
           {/* Text */}
           <div>
             <p className="font-heading font-700 text-[#1a56db] uppercase tracking-widest text-sm mb-4">
@@ -15,11 +15,11 @@ export default function About() {
             </h2>
             <p className="text-gray-600 text-lg leading-relaxed mb-6">
               Founded in 2020, Bali Bulldogs FC was built on a simple belief — football is for everyone. What started as a
-              small group of passionate players has grown into Bali&apos;s largest football community, with over 450 players
+              small group of passionate players has grown into Bali&apos;s largest football community, with over 300 players
               calling The Bulldogs Arena home.
             </p>
             <p className="text-gray-600 text-lg leading-relaxed mb-8">
-              From our youngest Kindy players taking their first kicks to our senior squads competing with pride, the Bulldogs
+              From our youngest Toddler players taking their first kicks to our senior squads competing with pride, the Bulldogs
               are more than a club — we&apos;re a family. Our motto isn&apos;t just words: <em>&quot;We Never Walk Alone.&quot;</em>
             </p>
 
@@ -27,7 +27,7 @@ export default function About() {
               {[
                 { icon: "🐾", title: "Community First", desc: "Building lasting bonds on and off the pitch" },
                 { icon: "📍", title: "The Bulldogs Arena", desc: "Our very own home ground in the heart of Bali" },
-                { icon: "👶", title: "From Kindy Up", desc: "Junior programs for every age group" },
+                { icon: "👶", title: "From Toddlers Up", desc: "Junior programs for every age group" },
                 { icon: "🌏", title: "Global Family", desc: "Players from across the world, one team" },
               ].map((item) => (
                 <div key={item.title} className="flex gap-3 p-4 rounded-xl bg-[#f0f4ff]">
@@ -52,14 +52,12 @@ export default function About() {
 
           {/* Visual */}
           <div className="relative">
-            {/* Main image placeholder */}
             <div
               className="w-full aspect-[4/5] rounded-2xl overflow-hidden shadow-2xl"
               style={{
                 background: "linear-gradient(135deg, #060f30 0%, #1243c0 50%, #1a56db 100%)",
               }}
             >
-              {/* Pattern overlay */}
               <div
                 className="absolute inset-0 opacity-10"
                 style={{
@@ -69,13 +67,15 @@ export default function About() {
                 }}
               />
               <div className="absolute inset-0 flex flex-col items-center justify-center text-white text-center p-8">
-                <Image
-                  src="/logo.png"
-                  alt="Bali Bulldogs FC"
-                  width={260}
-                  height={260}
-                  className="object-contain mb-4"
-                />
+                <div className="rounded-full overflow-hidden mb-4 border-4 border-[#ffc200]/40 shadow-2xl" style={{ width: 220, height: 220 }}>
+                  <Image
+                    src="/logo.png"
+                    alt="Bali Bulldogs FC"
+                    width={220}
+                    height={220}
+                    className="object-cover w-full h-full"
+                  />
+                </div>
                 <div className="font-heading font-700 text-xl text-[#ffc200]">The Bulldogs Arena</div>
                 <div className="text-white/60 text-sm mt-2">Our Home. Our Pride.</div>
               </div>
@@ -83,7 +83,7 @@ export default function About() {
 
             {/* Floating badge */}
             <div className="absolute -bottom-6 -left-6 bg-[#ffc200] text-[#04091d] rounded-2xl p-5 shadow-xl">
-              <div className="font-heading font-900 text-4xl">450+</div>
+              <div className="font-heading font-900 text-4xl">300+</div>
               <div className="font-heading font-600 text-xs uppercase tracking-widest mt-1">Players &amp; Growing</div>
             </div>
 
