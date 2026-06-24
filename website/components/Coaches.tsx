@@ -1,10 +1,11 @@
 const coaches = [
-  { initials: "BB", name: "Head Coach", role: "1st Team & Youth Director", color: "#1a56db" },
-  { initials: "BB", name: "Juniors Coordinator", role: "Youngsters & Junior Programs", color: "#ffc200" },
-  { initials: "BB", name: "Youth Coach", role: "U14 – U18 Development", color: "#091c5f" },
-  { initials: "BB", name: "Women's Coach", role: "U12 Girls & U18 Girls", color: "#1a56db" },
-  { initials: "BB", name: "Masters Coach", role: "Legends 35+ & Masters 45+", color: "#04091d" },
-  { initials: "BB", name: "Club Manager", role: "Operations & Registrations", color: "#ffc200" },
+  { initials: "J",  name: "Jon",      role: "Head Coach",      color: "#ffc200", text: "#04091d" },
+  { initials: "N",  name: "Nacho",    role: "Senior Coach",    color: "#1a56db", text: "#ffffff" },
+  { initials: "T",  name: "Trisna",   role: "Senior Coach",    color: "#1a56db", text: "#ffffff" },
+  { initials: "N",  name: "Nabila",   role: "Senior Coach",    color: "#1a56db", text: "#ffffff" },
+  { initials: "J",  name: "Joni",     role: "Senior",          color: "#091c5f", text: "#ffffff" },
+  { initials: "E",  name: "Eka",      role: "Assistant Coach", color: "#04091d", text: "#ffffff" },
+  { initials: "S",  name: "Salander", role: "Assistant Coach", color: "#04091d", text: "#ffffff" },
 ];
 
 export default function Coaches() {
@@ -23,7 +24,7 @@ export default function Coaches() {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {coaches.map((c, i) => (
             <div
               key={i}
@@ -34,7 +35,7 @@ export default function Coaches() {
                 className="w-14 h-14 rounded-full flex items-center justify-center flex-shrink-0 text-lg font-heading font-900"
                 style={{
                   background: c.color,
-                  color: c.color === "#ffc200" ? "#04091d" : "#ffffff",
+                  color: c.text,
                 }}
               >
                 {c.initials}

@@ -50,9 +50,8 @@ export default function Location() {
         <div className="grid md:grid-cols-2 gap-8 items-start">
           {/* Map */}
           <div className="rounded-2xl overflow-hidden shadow-2xl h-80 md:h-96 bg-[#0a1a3a]">
-            {/* Replace the src below with your actual Google Maps embed URL */}
             <iframe
-              src="https://maps.google.com/maps?q=The+Bulldogs+Arena+Bali&output=embed"
+              src="https://maps.google.com/maps?q=Bali+Bulldogs+FC&output=embed"
               className="w-full h-full border-0"
               loading="lazy"
               allowFullScreen
@@ -88,7 +87,7 @@ export default function Location() {
             ))}
 
             <a
-              href="https://maps.google.com/maps?q=The+Bulldogs+Arena+Bali"
+              href="https://maps.app.goo.gl/BZR8UKHiUgne8ZmEA"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-sunflower px-6 py-3 rounded-xl text-sm font-heading font-700 uppercase tracking-wider mt-2"
