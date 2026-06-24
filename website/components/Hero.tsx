@@ -56,9 +56,9 @@ export default function Hero() {
         {/* Quick stats */}
         <div className="flex flex-wrap justify-center gap-8 text-center">
           {[
-            { value: "450+", label: "Players" },
+            { value: "300+", label: "Players" },
             { value: "2020", label: "Founded" },
-            { value: "6", label: "Teams" },
+            { value: "15", label: "Teams" },
             { value: "Bali", label: "Indonesia" },
           ].map((s) => (
             <div key={s.label}>
